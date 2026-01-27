@@ -19,3 +19,11 @@ texture = ExtResource("1_giyi1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=706674740]
 shape = SubResource("CapsuleShape2D_giyi1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1242600971]
+process_callback = 0
+limit_left = -910
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="SonsCollisionSol" type="AudioStreamPlayer2D" parent="." unique_id=128508576]
