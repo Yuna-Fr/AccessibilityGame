@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
+@onready var jumpSound = $SonSaut
 
 var original_pos_x
 var new_pos_x
@@ -53,6 +54,8 @@ func _physics_process(delta: float) -> void:
 				soundGround.play()
 		
 		if Input.is_action_just_pressed("Move_Up"):
+			if jumpSound.stream != null:
+				jumpSound.play()
 			velocity.y = -jump_speed * 2
 		
 	if velocity.x > 0:
