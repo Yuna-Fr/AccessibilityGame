@@ -6,9 +6,24 @@ extends CharacterBody2D
 @export var friction : float = 30
 @export var air_friction : float = 5
 
+@onready var cam = $Camera2D
+
+var original_pos_x
+var new_pos_x
+
+func _ready() -> void:
+	original_pos_x = self.global_position.x
+	new_pos_x = original_pos_x
+	#print(get_viewport().get_visible_rect().size)
+	#cam.limit_left = get_viewport().get_visible_rect().size.x
+	cam.limit_left = 0
 
 func _physics_process(delta: float) -> void:
-	
+	new_pos_x =  self.global_position.x
+	if new_pos_x > original_pos_x:
+		cam.limit_left += new_pos_x - original_pos_x
+		original_pos_x = new_pos_x
+		
 	if not is_on_floor():
 		velocity.y += gravity * 5
 		if velocity.x > 0:
