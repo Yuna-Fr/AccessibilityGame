@@ -7,9 +7,11 @@ extends CharacterBody2D
 @export var air_friction : float = 5
 
 @onready var cam = $Camera2D
+@onready var soundGround = $SonsCollisionSol
 
 var original_pos_x
 var new_pos_x
+var toggle_ground:bool # a toggle when ground is hit (to triggered once per collision)
 
 func _ready() -> void:
 	original_pos_x = self.global_position.x
@@ -25,6 +27,9 @@ func _physics_process(delta: float) -> void:
 		original_pos_x = new_pos_x
 		
 	if not is_on_floor():
+		if toggle_ground:
+			toggle_ground = false
+		
 		velocity.y += gravity * 5
 		if velocity.x > 0:
 			velocity.x -= air_friction
@@ -42,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x += speed
 		
 	if is_on_floor():
+		if not toggle_ground:
+			toggle_ground = !toggle_ground
+			if soundGround.stream != null:
+				soundGround.play()
+		
 		if Input.is_action_just_pressed("Move_Up"):
 			velocity.y = -jump_speed * 2
 		

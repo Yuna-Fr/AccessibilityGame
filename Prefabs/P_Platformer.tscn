@@ -25,3 +25,5 @@ process_callback = 0
 limit_left = -910
 position_smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="SonsCollisionSol" type="AudioStreamPlayer2D" parent="." unique_id=128508576]
