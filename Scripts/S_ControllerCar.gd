@@ -3,6 +3,7 @@ class_name ControllerCar extends CharacterBody2D
 @export var speed: float = 500.0
 @export var life: int = 3
 var isdead: bool = false
+var candie: bool = true
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 
@@ -12,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	var direction := 0.0
 	
-	if life==0:
+	if life==0 && candie:
 		gameover()
 	
 	if isdead == true:
