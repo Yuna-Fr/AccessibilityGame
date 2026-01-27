@@ -1,17 +1,19 @@
 class_name ControllerShooter extends CharacterBody2D
 
 @export var speed: float = 500.0
+@export var bullet_prefab : PackedScene
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	var direction_y := 0.0
-	var direction_x := 0.0
 	
 	if Input.is_action_pressed("Action"): _shoot()
 	
 	# Movements
+	var direction_y := 0.0
+	var direction_x := 0.0
+	
 	if Input.is_action_pressed("Move_Up"): direction_y -= 1
 	if Input.is_action_pressed("Move_Down"): direction_y += 1
 	if Input.is_action_pressed("Move_Left"): direction_x -= 1
