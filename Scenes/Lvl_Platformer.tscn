@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://l5qlxyfyhu3r"]
+
+[ext_resource type="PackedScene" uid="uid://2ep1y7t2h4xq" path="res://Prefabs/P_Platformer.tscn" id="1_6s8nc"]
+
+[node name="LvlPlatformer" type="Node2D" unique_id=1444876429]
+
+[node name="CharacterBody2D" parent="." unique_id=1800201190 instance=ExtResource("1_6s8nc")]

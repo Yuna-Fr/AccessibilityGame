@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://2ep1y7t2h4xq"]
+
+[ext_resource type="Texture2D" uid="uid://uav6ptk4pf83" path="res://Textures/PersoPlatform.png" id="1_giyi1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giyi1"]
+radius = 19.0
+height = 86.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1800201190]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622755515]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_giyi1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=706674740]
+shape = SubResource("CapsuleShape2D_giyi1")
