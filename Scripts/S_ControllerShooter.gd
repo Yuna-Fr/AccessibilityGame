@@ -33,5 +33,5 @@ func _physics_process(delta):
 func _shoot():
 	var instance = bullet_prefab.instantiate()
 	instance.position = position
-	parent.add_child(instance)
+	#parent.add_child(instance)
 	
