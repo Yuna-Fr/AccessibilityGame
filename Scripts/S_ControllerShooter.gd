@@ -31,4 +31,7 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func _shoot():
-	print("UwU")
+	var instance = bullet_prefab.instantiate()
+	instance.position = position
+	parent.add_child(instance)
+	
