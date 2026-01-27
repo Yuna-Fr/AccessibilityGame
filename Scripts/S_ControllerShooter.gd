@@ -6,20 +6,27 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	var direction := 0.0
+	var direction_y := 0.0
+	var direction_x := 0.0
 	
 	if Input.is_action_pressed("Action"): _shoot()
-	if Input.is_action_pressed("Move_Up"): direction -= 1
-	if Input.is_action_pressed("Move_Down"): direction += 1
-	if Input.is_action_pressed("Move_Left"): direction -= 1
-	if Input.is_action_pressed("Move_Down"): direction += 1
+	
+	# Movements
+	if Input.is_action_pressed("Move_Up"): direction_y -= 1
+	if Input.is_action_pressed("Move_Down"): direction_y += 1
+	if Input.is_action_pressed("Move_Left"): direction_x -= 1
+	if Input.is_action_pressed("Move_Left"): direction_x -= 1
+	if Input.is_action_pressed("Move_Right"): direction_x += 1
 
-	velocity.y = direction * speed
+	var direction = Vector2(direction_x, direction_y).normalized()
+	velocity = direction * speed
+
 	move_and_slide()
 
-	# Clamp Y position to screen
-	var screen_height = get_viewport_rect().size.y
-	position.y = clamp(position.y, 0, screen_height)
+	# Clamp position to screen
+	var screen_size = get_viewport_rect().size
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
 
 func _shoot():
 	print("UwU")
