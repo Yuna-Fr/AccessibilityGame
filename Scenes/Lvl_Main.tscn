@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cmgwi4v7lraen"]
 
 [ext_resource type="Script" uid="uid://sc25ea4qlc2e" path="res://Scripts/Managers/S_GameManager.gd" id="2_5ieug"]
+[ext_resource type="PackedScene" uid="uid://ddlfwk1da0blt" path="res://Scenes/Lvl_Circuit.tscn" id="2_46i00"]
+[ext_resource type="PackedScene" uid="uid://brmlnd31b5e24" path="res://Prefabs/P_Ship.tscn" id="3_5ieug"]
 
 [node name="Main" type="Node2D" unique_id=844981688]
 
 [node name="GameManager" type="Node" parent="." unique_id=58678930]
 script = ExtResource("2_5ieug")
-SCENES = Array[PackedScene]([null, null, null, null])
+scene = Array[PackedScene]([ExtResource("2_46i00"), ExtResource("3_5ieug")])
