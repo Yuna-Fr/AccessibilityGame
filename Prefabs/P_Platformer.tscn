@@ -27,3 +27,5 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="SonsCollisionSol" type="AudioStreamPlayer2D" parent="." unique_id=128508576]
+
+[node name="SonSaut" type="AudioStreamPlayer2D" parent="." unique_id=1256281964]
