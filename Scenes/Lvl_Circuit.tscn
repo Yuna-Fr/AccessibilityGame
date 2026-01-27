@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddlfwk1da0blt"]
+
+[ext_resource type="PackedScene" uid="uid://uicbttlouc25" path="res://Prefabs/P_Car.tscn" id="1_334r5"]
+
+[node name="Circuit" type="Node2D" unique_id=844981688]
+
+[node name="Car" parent="." unique_id=1557541334 instance=ExtResource("1_334r5")]
+position = Vector2(255, 375)
