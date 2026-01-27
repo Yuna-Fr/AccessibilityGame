@@ -19,11 +19,15 @@ mesh = SubResource("QuadMesh_334r5")
 texture = ExtResource("2_w0enm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2135757618]
+position = Vector2(0, 9.44)
+scale = Vector2(0.735, 0.735)
 shape = SubResource("RectangleShape2D_f6gr6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1530687601]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1223612918]
+position = Vector2(0, 8.565)
+scale = Vector2(0.77, 0.77)
 shape = SubResource("RectangleShape2D_f6gr6")
 
 [node name="Timer" type="Timer" parent="." unique_id=1741391270]
