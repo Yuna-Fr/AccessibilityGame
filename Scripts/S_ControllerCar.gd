@@ -1,4 +1,4 @@
-class_name Controller extends CharacterBody2D
+class_name ControllerCar extends CharacterBody2D
 
 @export var speed: float = 500.0
 
@@ -8,10 +8,8 @@ func _ready():
 func _physics_process(delta):
 	var direction := 0.0
 	
-	if Input.is_action_pressed("Move_Up"):
-		direction -= 1
-	if Input.is_action_pressed("Move_Down"):
-		direction += 1
+	if Input.is_action_pressed("Move_Up"): direction -= 1
+	if Input.is_action_pressed("Move_Down"): direction += 1
 
 	velocity.y = direction * speed
 	move_and_slide()

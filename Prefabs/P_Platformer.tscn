@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2ep1y7t2h4xq"]
 
-[ext_resource type="Script" uid="uid://uwgen2t8pefg" path="res://Scripts/S_PersoPlatformer.gd" id="1_c8muk"]
+[ext_resource type="Script" path="res://Scripts/S_PersoPlatformer.gd" id="1_c8muk"]
 [ext_resource type="Texture2D" uid="uid://uav6ptk4pf83" path="res://Textures/PersoPlatform.png" id="1_giyi1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giyi1"]

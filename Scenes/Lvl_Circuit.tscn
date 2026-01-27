@@ -5,4 +5,4 @@
 [node name="Circuit" type="Node2D" unique_id=844981688]
 
 [node name="Car" parent="." unique_id=1557541334 instance=ExtResource("1_334r5")]
-position = Vector2(255, 375)
+position = Vector2(300, 550)
