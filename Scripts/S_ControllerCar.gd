@@ -54,4 +54,5 @@ func gameover():
 
 func _on_timer_timeout() -> void:
 	isdead = false
+	MeshColor.rotation = 0
 	pass # Replace with function body.

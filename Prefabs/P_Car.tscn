@@ -16,12 +16,13 @@ motion_mode = 1
 script = ExtResource("1_rc56u")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1382922189]
+scale = Vector2(1.0000002, 1.0000002)
 mesh = SubResource("QuadMesh_334r5")
 texture = ExtResource("2_w0enm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2135757618]
-position = Vector2(0, 9.44)
-scale = Vector2(0.735, 0.735)
+position = Vector2(0, 9.440001)
+scale = Vector2(0.7350001, 0.7350001)
 shape = SubResource("RectangleShape2D_f6gr6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1530687601]
