@@ -8,7 +8,7 @@ extends Node2D
 var screen_height: float
 
 func _ready():
-	screen_height = get_viewport_rect().size.y
+	screen_height = get_viewport_rect().size.y -150
 	
 	var timer = $Timer
 	timer.wait_time = spawn_interval

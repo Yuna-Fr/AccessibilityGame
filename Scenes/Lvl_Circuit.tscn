@@ -9,4 +9,5 @@
 position = Vector2(300, 550)
 
 [node name="Spawner" parent="." unique_id=2019538537 instance=ExtResource("2_334r5")]
-position = Vector2(1980, 0)
+position = Vector2(2100, 100)
+spawn_interval = 0.5
