@@ -13,6 +13,7 @@ shader = ExtResource("3_27g2j")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=812758889]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_sdcp1")
+instance_shader_parameters/ScrollSpeed = 0.250000011875
 scale = Vector2(1.0427083, 1)
 texture = ExtResource("3_cyftx")
 centered = false
