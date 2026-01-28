@@ -13,6 +13,7 @@ size = Vector2(70, 112)
 scale = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=831051816]
+collision_layer = 4
 script = ExtResource("1_e6xlt")
 speed = 500.0
 texturelist = Array[Texture]([ExtResource("2_e6xlt"), ExtResource("3_lk3ax"), ExtResource("4_5tqfa"), ExtResource("5_8wwjh")])
