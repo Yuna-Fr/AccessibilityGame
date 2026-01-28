@@ -4,21 +4,35 @@ class_name ControllerShooter extends CharacterBody2D
 @export var speed: float = 500.0
 @export var reload_time : float = 1
 
+#Variables communes
+@export var life: int = 3
+var isdead: bool = false
+var canDie: bool = true
+#
+@onready var timer = $Timer
+@onready var MeshColor = $MeshInstance2D
+
 var can_shoot := true
 
 func _physics_process(delta):
+	
+	if life==0 && canDie:
+		gameover()
+
+	if isdead == true:
+		diestate(delta)
 	
 	if Input.is_action_pressed("Action") and can_shoot: _shoot()
 	
 	# Movements
 	var direction_y := 0.0
 	var direction_x := 0.0
-	
-	if Input.is_action_pressed("Move_Up"): direction_y -= 1
-	if Input.is_action_pressed("Move_Down"): direction_y += 1
-	if Input.is_action_pressed("Move_Left"): direction_x -= 1
-	if Input.is_action_pressed("Move_Left"): direction_x -= 1
-	if Input.is_action_pressed("Move_Right"): direction_x += 1
+	if isdead == false:
+		if Input.is_action_pressed("Move_Up"): direction_y -= 1
+		if Input.is_action_pressed("Move_Down"): direction_y += 1
+		if Input.is_action_pressed("Move_Left"): direction_x -= 1
+		if Input.is_action_pressed("Move_Left"): direction_x -= 1
+		if Input.is_action_pressed("Move_Right"): direction_x += 1
 
 	var direction = Vector2(direction_x, direction_y).normalized()
 	velocity = direction * speed
@@ -39,3 +53,33 @@ func _shoot():
 
 	await get_tree().create_timer(reload_time).timeout
 	can_shoot = true
+
+
+
+func die():
+	if(isdead == false):
+		life -= 1
+	isdead = true
+	timer.start()
+	print("life : ", life)
+
+func diestate(delta):
+	#MeshColor.modulate(Color.RED)
+	can_shoot = false
+	MeshColor.rotate(20 * delta)
+
+func gameover():
+	queue_free()
+	print("gameover")
+	pass
+
+func _on_timer_timeout() -> void:
+	isdead = false
+	MeshColor.rotation = 0
+	can_shoot = true
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	die()
+	pass # Replace with function body.
