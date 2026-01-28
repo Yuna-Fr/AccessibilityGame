@@ -27,8 +27,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Clamp Y position to screen
-	var screen_height = get_viewport_rect().size.y
-	position.y = clamp(position.y, 0, screen_height)
+	var screen_height = get_viewport_rect().size.y -80
+	position.y = clamp(position.y, 80, screen_height)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -36,9 +36,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 func die():
+	if(isdead == false):
+		life -= 1
 	isdead = true
 	timer.start()
-	life -= 1
 	print("life : ", life)
 	
 

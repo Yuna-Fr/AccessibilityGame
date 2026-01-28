@@ -1,23 +1,31 @@
 [gd_scene format=3 uid="uid://c61ya16v2lbhh"]
 
 [ext_resource type="Script" uid="uid://0u6iuy14slvq" path="res://Scripts/S_Obstacle.gd" id="1_e6xlt"]
-[ext_resource type="Texture2D" uid="uid://c2yktyue82ivo" path="res://icon.svg" id="2_7xv5f"]
+[ext_resource type="Texture2D" uid="uid://ck6uv4fv3pefj" path="res://Textures/NPC Car/ObstaclesVoitures_01.png" id="2_e6xlt"]
+[ext_resource type="Texture2D" uid="uid://lgqnc02pf5oh" path="res://Textures/NPC Car/ObstaclesVoitures_02.png" id="3_lk3ax"]
+[ext_resource type="Texture2D" uid="uid://1amogcbxmwqq" path="res://Textures/NPC Car/ObstaclesVoitures_03.png" id="4_5tqfa"]
+[ext_resource type="Texture2D" uid="uid://d4k004t0var8g" path="res://Textures/NPC Car/ObstaclesVoitures_04.png" id="5_8wwjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk4ev"]
-size = Vector2(128, 126)
+size = Vector2(70, 112)
 
 [node name="Obstacle" type="Node2D" unique_id=1874063012]
+scale = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=831051816]
 script = ExtResource("1_e6xlt")
-speed = 400.0
+speed = 500.0
+texturelist = Array[Texture]([ExtResource("2_e6xlt"), ExtResource("3_lk3ax"), ExtResource("4_5tqfa"), ExtResource("5_8wwjh")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=957320987]
-position = Vector2(0, -1)
+position = Vector2(8.742279e-08, 1)
+rotation = -1.5707964
 shape = SubResource("RectangleShape2D_gk4ev")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1267985465]
-texture = ExtResource("2_7xv5f")
+rotation = -1.5707964
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("3_lk3ax")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

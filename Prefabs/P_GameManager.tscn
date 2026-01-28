@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dexxyfu6ae6js"]
+
+[ext_resource type="Script" uid="uid://sc25ea4qlc2e" path="res://Scripts/Managers/S_GameManager.gd" id="1_mscuu"]
+[ext_resource type="PackedScene" uid="uid://ddlfwk1da0blt" path="res://Scenes/Lvl_Circuit.tscn" id="2_yvwh2"]
+[ext_resource type="PackedScene" uid="uid://bvxtapckc23ri" path="res://Scenes/Lvl_Shooter.tscn" id="3_jk1w7"]
+[ext_resource type="PackedScene" uid="uid://l5qlxyfyhu3r" path="res://Scenes/Lvl_Platformer.tscn" id="4_4hj4p"]
+
+[node name="GameManager" type="Node" unique_id=1064483369]
+script = ExtResource("1_mscuu")
+scene = Array[PackedScene]([ExtResource("2_yvwh2"), ExtResource("3_jk1w7"), ExtResource("4_4hj4p")])

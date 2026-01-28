@@ -1,14 +1,14 @@
 class_name ControllerShooter extends CharacterBody2D
 
-@export var speed: float = 500.0
 @export var bullet_prefab : PackedScene
+@export var speed: float = 500.0
+@export var reload_time := 1
 
-func _ready():
-	pass
+var can_shoot := true
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("Action"): _shoot()
+	if Input.is_action_pressed("Action") and can_shoot: _shoot()
 	
 	# Movements
 	var direction_y := 0.0
@@ -31,7 +31,11 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func _shoot():
-	var instance = bullet_prefab.instantiate()
-	instance.position = position
-	#parent.add_child(instance)
-	
+	can_shoot = false
+
+	var bullet = bullet_prefab.instantiate()
+	bullet.global_position = global_position
+	GameManager.instance.current_scene.add_child(bullet)
+
+	await get_tree().create_timer(reload_time).timeout
+	can_shoot = true

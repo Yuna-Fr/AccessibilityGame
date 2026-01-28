@@ -15,10 +15,15 @@ run/main_scene="uid://cmgwi4v7lraen"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://dexxyfu6ae6js"
+
 [display]
 
 window/size/viewport_width=1980
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [file_customization]
 
