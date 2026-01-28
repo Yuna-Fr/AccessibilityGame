@@ -1,11 +1,14 @@
 class_name S_GameManager extends Node
 
+static var instance : S_GameManager
+
 @export var scene : Array[PackedScene]
 
 var current_index : int = 0
 var current_scene : Node
 	
 func _ready() -> void:
+	instance = self
 	swapScene(0)
 
 func _physics_process(delta):

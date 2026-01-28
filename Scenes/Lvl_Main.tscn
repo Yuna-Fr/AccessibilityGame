@@ -1,12 +1,52 @@
 [gd_scene format=3 uid="uid://cmgwi4v7lraen"]
 
-[ext_resource type="Script" uid="uid://sc25ea4qlc2e" path="res://Scripts/Managers/S_GameManager.gd" id="2_5ieug"]
-[ext_resource type="PackedScene" uid="uid://ddlfwk1da0blt" path="res://Scenes/Lvl_Circuit.tscn" id="2_46i00"]
-[ext_resource type="PackedScene" uid="uid://bvxtapckc23ri" path="res://Scenes/Lvl_Shooter.tscn" id="3_jkbv4"]
-[ext_resource type="PackedScene" uid="uid://l5qlxyfyhu3r" path="res://Scenes/Lvl_Platformer.tscn" id="4_jkbv4"]
+[ext_resource type="Script" uid="uid://f51qm3ejnsnl" path="res://Scripts/Managers/S_InputManager.gd" id="1_dn8kq"]
 
-[node name="Main" type="Node2D" unique_id=844981688]
+[node name="Main" type="Node" unique_id=851250145]
 
-[node name="GameManager" type="Node" parent="." unique_id=58678930]
-script = ExtResource("2_5ieug")
-scene = Array[PackedScene]([ExtResource("2_46i00"), ExtResource("3_jkbv4"), ExtResource("4_jkbv4")])
+[node name="Control" type="Control" parent="." unique_id=1809638006 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dn8kq")
+move_up_btn = NodePath("CenterContainer/VBoxContainer/Button_Up")
+move_down_btn = NodePath("CenterContainer/VBoxContainer/Button_Down")
+move_left_btn = NodePath("CenterContainer/VBoxContainer/Button_Left")
+move_right_btn = NodePath("CenterContainer/VBoxContainer/Button_Right")
+action_btn = NodePath("CenterContainer/VBoxContainer/Button_Action")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1982409438]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=266023372]
+layout_mode = 2
+
+[node name="Button_Up" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1196333855]
+layout_mode = 2
+text = "ggg"
+
+[node name="Button_Down" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1750421717]
+layout_mode = 2
+text = "gggg"
+
+[node name="Button_Left" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=812200971]
+layout_mode = 2
+text = "ggg"
+
+[node name="Button_Right" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=806511399]
+layout_mode = 2
+text = "gggg"
+
+[node name="Button_Action" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=1908981265]
+layout_mode = 2
+text = "fgg"

@@ -38,7 +38,7 @@ func _shoot():
 
 	var bullet = bullet_prefab.instantiate()
 	bullet.global_position = global_position
-	get_tree().current_scene.add_child(bullet)
+	GameManager.instance.current_scene.add_child(bullet)
 
 	await get_tree().create_timer(reload_time).timeout
 	can_shoot = true
