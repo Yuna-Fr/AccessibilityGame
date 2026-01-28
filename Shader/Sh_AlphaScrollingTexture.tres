@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" format=3 uid="uid://cq77gtwe2vs3k"]
+[gd_resource type="VisualShader" format=3 uid="uid://5mj3ushs6nkj"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_756vi"]
 default_input_values = [0, 0.0, 1, 2.025]
@@ -9,6 +9,9 @@ qualifier = 2
 hint = 1
 default_value_enabled = true
 default_value = 0.2
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_5w6ps"]
+function = 31
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_jxkcl"]
 input_name = "texture"
@@ -37,7 +40,7 @@ operator = 2
 mode = 1
 flags/light_only = false
 nodes/vertex/0/position = Vector2(506.66666, 280)
-nodes/fragment/0/position = Vector2(973.3333, 226.66667)
+nodes/fragment/0/position = Vector2(613.3333, 226.66667)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_jxkcl")
 nodes/fragment/2/position = Vector2(-173.33333, 320)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_3xjhf")
@@ -56,4 +59,6 @@ nodes/fragment/10/node = SubResource("VisualShaderNodeFloatOp_756vi")
 nodes/fragment/10/position = Vector2(-453.33334, -93.333336)
 nodes/fragment/11/node = SubResource("VisualShaderNodeFloatParameter_o8nva")
 nodes/fragment/11/position = Vector2(-1146.6666, -200)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 5, 0, 6, 0, 7, 0, 3, 0, 4, 0, 9, 0, 6, 1, 7, 1, 6, 0, 10, 0, 10, 0, 7, 0, 9, 0, 10, 1, 11, 0, 9, 1, 3, 0, 0, 0)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatFunc_5w6ps")
+nodes/fragment/12/position = Vector2(402.25552, 359.87585)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 5, 0, 6, 0, 7, 0, 3, 0, 4, 0, 9, 0, 6, 1, 7, 1, 6, 0, 10, 0, 10, 0, 7, 0, 9, 0, 10, 1, 11, 0, 9, 1, 3, 0, 0, 0, 3, 0, 12, 0, 12, 0, 0, 1)
