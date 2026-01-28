@@ -50,12 +50,10 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
-			if soundGround.stream != null:
-				soundGround.play()
+			soundGround.play_random()
 		
 		if Input.is_action_just_pressed("Move_Up"):
-			if jumpSound.stream != null:
-				jumpSound.play()
+			jumpSound.play_random()
 			velocity.y = -jump_speed * 2
 		
 	if velocity.x > 0:
