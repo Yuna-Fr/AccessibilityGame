@@ -9,6 +9,7 @@ size = Vector2(100, 115)
 size = Vector2(36, 20)
 
 [node name="Bullet" type="Area2D" unique_id=886213767]
+collision_mask = 4
 script = ExtResource("1_hlsg0")
 speed = 1000.0
 
@@ -19,3 +20,5 @@ mesh = SubResource("QuadMesh_334r5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2135757618]
 shape = SubResource("RectangleShape2D_f6gr6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
