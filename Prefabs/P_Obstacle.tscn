@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://lgqnc02pf5oh" path="res://Textures/NPC Car/ObstaclesVoitures_02.png" id="3_lk3ax"]
 [ext_resource type="Texture2D" uid="uid://1amogcbxmwqq" path="res://Textures/NPC Car/ObstaclesVoitures_03.png" id="4_5tqfa"]
 [ext_resource type="Texture2D" uid="uid://d4k004t0var8g" path="res://Textures/NPC Car/ObstaclesVoitures_04.png" id="5_8wwjh"]
+[ext_resource type="Material" uid="uid://dei6beqa0tb60" path="res://Shader/Materials/EnnemyMaterial.tres" id="6_5tqfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk4ev"]
 size = Vector2(70, 112)
@@ -24,6 +25,7 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_gk4ev")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1267985465]
+material = ExtResource("6_5tqfa")
 rotation = -1.5707964
 scale = Vector2(0.26953125, 0.26953125)
 texture = ExtResource("3_lk3ax")

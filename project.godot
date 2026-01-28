@@ -85,3 +85,22 @@ SwapScene={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+PlayerColorParameter={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+EnnemyColorParameter={
+"type": "color",
+"value": Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+}
+BackgroundColorParameter={
+"type": "color",
+"value": Color(1, 1, 0.40784314, 1)
+}
+BulletColorParameter={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}

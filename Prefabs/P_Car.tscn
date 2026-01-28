@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://uicbttlouc25"]
 
 [ext_resource type="Script" uid="uid://ch8ktq1gmtv80" path="res://Scripts/S_ControllerCar.gd" id="1_rc56u"]
+[ext_resource type="Shader" uid="uid://cf7h2qv1ugadw" path="res://Shader/ColorShader/PlayerShader.tres" id="2_kfo2i"]
 [ext_resource type="Texture2D" uid="uid://c18dbmiy4jm50" path="res://Textures/T_Car.png" id="2_w0enm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ng0yf"]
+shader = ExtResource("2_kfo2i")
 
 [sub_resource type="QuadMesh" id="QuadMesh_334r5"]
 size = Vector2(100, 115)
@@ -16,6 +20,7 @@ motion_mode = 1
 script = ExtResource("1_rc56u")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1382922189]
+material = SubResource("ShaderMaterial_ng0yf")
 scale = Vector2(1.0000002, 1.0000002)
 mesh = SubResource("QuadMesh_334r5")
 texture = ExtResource("2_w0enm")
