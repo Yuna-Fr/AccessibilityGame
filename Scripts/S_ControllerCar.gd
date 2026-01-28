@@ -36,9 +36,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 func die():
+	if(isdead == false):
+		life -= 1
 	isdead = true
 	timer.start()
-	life -= 1
 	print("life : ", life)
 	
 
