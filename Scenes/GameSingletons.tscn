@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cscme22kv01xs"]
+
+[ext_resource type="PackedScene" uid="uid://d0quhwhqloe4k" path="res://Prefabs/UI/P_SettingsMenu.tscn" id="1_brlci"]
+[ext_resource type="AudioStream" uid="uid://d28fepqwharwc" path="res://Sound/Music/Music01.wav" id="2_brlci"]
+
+[node name="SINGLETONS" type="Node" unique_id=2117218218]
+
+[node name="MenuLayer" parent="." unique_id=634841517 instance=ExtResource("1_brlci")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1287726723]
+stream = ExtResource("2_brlci")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"

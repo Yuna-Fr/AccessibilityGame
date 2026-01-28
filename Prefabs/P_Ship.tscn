@@ -14,6 +14,7 @@ size = Vector2(67.09887, 96)
 size = Vector2(66.66667, 96.66667)
 
 [node name="Ship" type="CharacterBody2D" unique_id=1557541334]
+z_index = 1
 scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_6wsb7")
