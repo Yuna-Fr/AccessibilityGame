@@ -12,4 +12,6 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	print("bouffon")
-	pass # Replace with function body.
+
+func _on_area_entered(body: Area2D) -> void:
+	queue_free()
