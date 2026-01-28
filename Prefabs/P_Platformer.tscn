@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://uav6ptk4pf83" path="res://Textures/PersoPlatform.png" id="1_giyi1"]
 [ext_resource type="Script" uid="uid://cnng8j5lrxadt" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="3_tpj53"]
 [ext_resource type="AudioStream" uid="uid://yh5oy4jra7tb" path="res://Sound/Jump/Jump_1.wav" id="4_mclbp"]
+[ext_resource type="AudioStream" uid="uid://q0ew8kscq4g4" path="res://Sound/Land/Land_1.wav" id="4_wesf8"]
 [ext_resource type="AudioStream" uid="uid://ci0btprxaiwm1" path="res://Sound/Jump/Jump_2.wav" id="5_8h7bl"]
+[ext_resource type="AudioStream" uid="uid://ofu8q32uomn0" path="res://Sound/Land/Land_2.wav" id="5_67mfk"]
 [ext_resource type="AudioStream" uid="uid://bvvqc54o3spf3" path="res://Sound/Jump/Jump_3.wav" id="6_wesf8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_giyi1"]
@@ -33,6 +35,7 @@ editor_draw_limits = true
 [node name="SonsCollisionSol" type="AudioStreamPlayer2D" parent="." unique_id=329172215]
 bus = &"SFX"
 script = ExtResource("3_tpj53")
+Sounds = Array[AudioStream]([ExtResource("4_wesf8"), ExtResource("5_67mfk")])
 metadata/_custom_type_script = "uid://cnng8j5lrxadt"
 
 [node name="SonSaut" type="AudioStreamPlayer2D" parent="." unique_id=2007829188]

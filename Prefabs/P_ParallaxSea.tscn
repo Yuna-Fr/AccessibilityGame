@@ -42,7 +42,7 @@ centered = false
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1342529945]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_15nw4")
-instance_shader_parameters/ScrollSpeed = 0.30000001425
+instance_shader_parameters/ScrollSpeed = 0.170000008075
 scale = Vector2(1.0473958, 1)
 texture = ExtResource("6_ti4kv")
 centered = false

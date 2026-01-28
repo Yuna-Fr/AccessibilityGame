@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="AccessibilityGame"
-run/main_scene="uid://cmgwi4v7lraen"
+run/main_scene="uid://ddlfwk1da0blt"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*uid://dexxyfu6ae6js"
+GameSingletons="*uid://4qfeel6lcbx6"
 
 [display]
 
