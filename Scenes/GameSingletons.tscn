@@ -1,58 +1,11 @@
-[gd_scene format=3 uid="uid://4qfeel6lcbx6"]
+[gd_scene format=3 uid="uid://cscme22kv01xs"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/S_InputManager.gd" id="1_lbkkf"]
+[ext_resource type="PackedScene" uid="uid://d0quhwhqloe4k" path="res://Prefabs/UI/P_SettingsMenu.tscn" id="1_brlci"]
 [ext_resource type="AudioStream" uid="uid://d28fepqwharwc" path="res://Sound/Music/Music01.wav" id="2_brlci"]
 
 [node name="SINGLETONS" type="Node" unique_id=2117218218]
 
-[node name="MenuLayer" type="CanvasLayer" parent="." unique_id=937630570]
-
-[node name="Control" type="Control" parent="MenuLayer" unique_id=1018989807 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_lbkkf")
-move_up_btn = NodePath("CenterContainer/VBoxContainer/Button_Up")
-move_down_btn = NodePath("CenterContainer/VBoxContainer/Button_Down")
-move_left_btn = NodePath("CenterContainer/VBoxContainer/Button_Left")
-move_right_btn = NodePath("CenterContainer/VBoxContainer/Button_Right")
-action_btn = NodePath("CenterContainer/VBoxContainer/Button_Action")
-
-[node name="CenterContainer" type="CenterContainer" parent="MenuLayer/Control" unique_id=1498947903]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/Control/CenterContainer" unique_id=1546599481]
-layout_mode = 2
-
-[node name="Button_Up" type="Button" parent="MenuLayer/Control/CenterContainer/VBoxContainer" unique_id=224237000]
-layout_mode = 2
-text = "ggg"
-
-[node name="Button_Down" type="Button" parent="MenuLayer/Control/CenterContainer/VBoxContainer" unique_id=1639186652]
-layout_mode = 2
-text = "gggg"
-
-[node name="Button_Left" type="Button" parent="MenuLayer/Control/CenterContainer/VBoxContainer" unique_id=604346937]
-layout_mode = 2
-text = "ggg"
-
-[node name="Button_Right" type="Button" parent="MenuLayer/Control/CenterContainer/VBoxContainer" unique_id=2037441667]
-layout_mode = 2
-text = "gggg"
-
-[node name="Button_Action" type="Button" parent="MenuLayer/Control/CenterContainer/VBoxContainer" unique_id=398189520]
-layout_mode = 2
-text = "fgg"
+[node name="MenuLayer" parent="." unique_id=634841517 instance=ExtResource("1_brlci")]
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1287726723]
 stream = ExtResource("2_brlci")
