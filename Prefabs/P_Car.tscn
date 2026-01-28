@@ -11,6 +11,7 @@ size = Vector2(56, 96)
 
 [node name="Car" type="CharacterBody2D" unique_id=1557541334]
 rotation = -1.5707964
+scale = Vector2(1.7, 1.7)
 motion_mode = 1
 script = ExtResource("1_rc56u")
 
