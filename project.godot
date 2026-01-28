@@ -97,7 +97,7 @@ EnnemyColorParameter={
 }
 BackgroundColorParameter={
 "type": "color",
-"value": Color(0.9571522, 0.9653192, 0.97187537, 1)
+"value": Color(0.95686275, 0.9647059, 0.2784314, 1)
 }
 BulletColorParameter={
 "type": "color",

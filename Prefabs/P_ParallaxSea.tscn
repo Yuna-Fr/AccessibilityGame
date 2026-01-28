@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://d0331r5yd5iuq"]
 
+[ext_resource type="Shader" uid="uid://546f61m5f2b2" path="res://Shader/ColorShader/BackgroundShader.tres" id="1_4a87c"]
 [ext_resource type="Texture2D" uid="uid://b3u1nedk7jagn" path="res://Textures/Scrolling sea/Background_Waves_BG.png" id="1_wu20n"]
 [ext_resource type="Shader" uid="uid://5mj3ushs6nkj" path="res://Shader/Sh_AlphaScrollingTexture.tres" id="2_4a87c"]
 [ext_resource type="Texture2D" uid="uid://doy0keudmus5s" path="res://Textures/Scrolling sea/Background_Waves_BG2.png" id="3_an6tc"]
 [ext_resource type="Texture2D" uid="uid://bvqiv6fqoxdeo" path="res://Textures/Scrolling sea/Background_Waves_BG3.png" id="4_7hcu3"]
 [ext_resource type="Texture2D" uid="uid://bn6bqyycu3ox" path="res://Textures/Scrolling sea/Background_Waves_Waves.png" id="6_ti4kv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_an6tc"]
+shader = ExtResource("1_4a87c")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_so4je"]
 shader = ExtResource("2_4a87c")
@@ -19,6 +23,7 @@ shader = ExtResource("2_4a87c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=192536265]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_an6tc")
 scale = Vector2(1.046875, 1)
 texture = ExtResource("1_wu20n")
 centered = false

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://r5rahpacn5ml"]
 
 [ext_resource type="Script" uid="uid://d06eae24qth5a" path="res://Scripts/S_Bullet.gd" id="1_hlsg0"]
+[ext_resource type="Shader" uid="uid://kfuoa4pr66ye" path="res://Shader/ColorShader/BulletShader.tres" id="2_fq2a7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_axkmt"]
+shader = ExtResource("2_fq2a7")
 
 [sub_resource type="QuadMesh" id="QuadMesh_334r5"]
 size = Vector2(100, 115)
@@ -14,6 +18,7 @@ script = ExtResource("1_hlsg0")
 speed = 1000.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1382922189]
+material = SubResource("ShaderMaterial_axkmt")
 position = Vector2(-1.847744e-06, -2.682209e-07)
 scale = Vector2(0.358, 0.17)
 mesh = SubResource("QuadMesh_334r5")

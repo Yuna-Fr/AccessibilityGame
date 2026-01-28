@@ -1,13 +1,18 @@
 [gd_scene format=4 uid="uid://l5qlxyfyhu3r"]
 
 [ext_resource type="PackedScene" uid="uid://2ep1y7t2h4xq" path="res://Prefabs/P_Platformer.tscn" id="1_6s8nc"]
+[ext_resource type="Shader" uid="uid://546f61m5f2b2" path="res://Shader/ColorShader/BackgroundShader.tres" id="1_q70wk"]
 [ext_resource type="Texture2D" uid="uid://le33w3qehpme" path="res://Textures/Bloc.png" id="2_a4mmt"]
 [ext_resource type="Shader" uid="uid://5mj3ushs6nkj" path="res://Shader/Sh_AlphaScrollingTexture.tres" id="2_ocwxl"]
 [ext_resource type="Texture2D" uid="uid://dva1vmdjute6d" path="res://Textures/Mountains/Background_Forest_BG.png" id="4_g5sgj"]
+[ext_resource type="Material" uid="uid://b72bk3084ufaf" path="res://Shader/Materials/BackgroundMaterial.tres" id="5_kpbdu"]
 [ext_resource type="Texture2D" uid="uid://dseupitf13fxp" path="res://Textures/Mountains/Background_Forest_Clouds.png" id="5_ocwxl"]
 [ext_resource type="Texture2D" uid="uid://d05kx06m86tq7" path="res://Textures/Mountains/Background_Forest_MontagneBG1.png" id="6_q70wk"]
 [ext_resource type="Texture2D" uid="uid://dy3uv8wc2bwr7" path="res://Textures/Mountains/Background_Forest_MontagneBG2.png" id="7_kpbdu"]
 [ext_resource type="Texture2D" uid="uid://cnbkxkqpvm0o5" path="res://Textures/Mountains/Background_Forest_Arbres.png" id="8_eribn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eribn"]
+shader = ExtResource("1_q70wk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q70wk"]
 shader = ExtResource("2_ocwxl")
@@ -38,6 +43,7 @@ position = Vector2(960, 540)
 layer = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="MountainParallax/CanvasLayer" unique_id=605173193]
+material = SubResource("ShaderMaterial_eribn")
 position = Vector2(996, 540)
 scale = Vector2(1.0375, 1)
 texture = ExtResource("4_g5sgj")
@@ -55,6 +61,7 @@ scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MountainParallax/Parallax2D2" unique_id=835193410]
+material = ExtResource("5_kpbdu")
 scale = Vector2(1.1777776, 1.1777776)
 texture = ExtResource("6_q70wk")
 
@@ -63,6 +70,7 @@ scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MountainParallax/Parallax2D3" unique_id=1860902259]
+material = ExtResource("5_kpbdu")
 position = Vector2(0, 60)
 scale = Vector2(1.1629628, 1.1629629)
 texture = ExtResource("7_kpbdu")
@@ -73,6 +81,7 @@ repeat_size = Vector2(3840, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="MountainParallax/Parallax2D4" unique_id=677300722]
+material = ExtResource("5_kpbdu")
 position = Vector2(512, -284.00003)
 scale = Vector2(1.912963, 1.9129629)
 texture = ExtResource("8_eribn")
