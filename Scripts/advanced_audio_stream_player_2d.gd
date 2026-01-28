@@ -1,4 +1,4 @@
-class_name AdvancedStreamPlayer2D
+class_name AdvancedAudioStreamPlayer2D
 extends AudioStreamPlayer2D
 
 @export var Sounds : Array[AudioStream]
