@@ -54,8 +54,6 @@ func _shoot():
 	await get_tree().create_timer(reload_time).timeout
 	can_shoot = true
 
-
-
 func die():
 	if(isdead == false):
 		life -= 1

@@ -16,6 +16,7 @@ const REBINDABLE_ACTIONS := [
 @export var move_right_btn : Button
 @export var action_btn : Button
 @export var reset_btn : Button
+@export var finish_btn : Button
 
 var waiting_for_input := false
 var action_to_rebind := ""
@@ -30,6 +31,10 @@ func _ready():
 	move_right_btn.pressed.connect(func(): start_rebind("Move_Right"))
 	action_btn.pressed.connect(func(): start_rebind("Action"))
 	reset_btn.pressed.connect(func(): reset_bindings())
+	finish_btn.pressed.connect(func(): finish())
+
+func finish():
+	self.visible = false
 
 func getButton(action: String) -> Button :
 	if action == "Move_Up" : return move_up_btn

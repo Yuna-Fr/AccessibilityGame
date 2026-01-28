@@ -4,7 +4,7 @@
 
 [node name="MenuLayer" type="CanvasLayer" unique_id=634841517]
 
-[node name="Control" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "reset_btn")]
+[node name="Control" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "reset_btn", "finish_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +20,7 @@ move_left_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Left")
 move_right_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Right")
 action_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Action")
 reset_btn = NodePath("Button_Reset")
+finish_btn = NodePath("Button_Finish")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1196798357]
 layout_mode = 1
@@ -123,3 +124,11 @@ offset_top = 652.0
 offset_right = 1015.0
 offset_bottom = 683.0
 text = "Reset"
+
+[node name="Button_Finish" type="Button" parent="Control" unique_id=1693392703]
+layout_mode = 0
+offset_left = 1026.0
+offset_top = 653.0
+offset_right = 1080.0
+offset_bottom = 684.0
+text = "Finish"
