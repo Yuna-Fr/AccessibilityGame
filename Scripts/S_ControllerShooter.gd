@@ -2,7 +2,7 @@ class_name ControllerShooter extends CharacterBody2D
 
 @export var bullet_prefab : PackedScene
 @export var speed: float = 500.0
-@export var reload_time := 1
+@export var reload_time : float = 1
 
 var can_shoot := true
 
