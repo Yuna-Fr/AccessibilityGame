@@ -6,9 +6,6 @@ class_name ControllerShooter extends CharacterBody2D
 
 var can_shoot := true
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("Action") and can_shoot: _shoot()
