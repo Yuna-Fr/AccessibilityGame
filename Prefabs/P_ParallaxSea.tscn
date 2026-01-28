@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d0331r5yd5iuq"]
+
+[ext_resource type="Texture2D" uid="uid://b3u1nedk7jagn" path="res://Textures/Scrolling sea/Background_Waves_BG.png" id="1_wu20n"]
+[ext_resource type="Shader" uid="uid://5mj3ushs6nkj" path="res://Shader/Sh_AlphaScrollingTexture.tres" id="2_4a87c"]
+[ext_resource type="Texture2D" uid="uid://doy0keudmus5s" path="res://Textures/Scrolling sea/Background_Waves_BG2.png" id="3_an6tc"]
+[ext_resource type="Texture2D" uid="uid://bvqiv6fqoxdeo" path="res://Textures/Scrolling sea/Background_Waves_BG3.png" id="4_7hcu3"]
+[ext_resource type="Texture2D" uid="uid://bn6bqyycu3ox" path="res://Textures/Scrolling sea/Background_Waves_Waves.png" id="6_ti4kv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_so4je"]
+shader = ExtResource("2_4a87c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txudv"]
+shader = ExtResource("2_4a87c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15nw4"]
+shader = ExtResource("2_4a87c")
+
+[node name="ParallaxSea" type="Node2D" unique_id=2126600029]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=192536265]
+texture_repeat = 2
+scale = Vector2(1.046875, 1)
+texture = ExtResource("1_wu20n")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1177531762]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_so4je")
+instance_shader_parameters/ScrollSpeed = 0.150000007125
+scale = Vector2(1.04375, 1)
+texture = ExtResource("3_an6tc")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1363725838]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_txudv")
+instance_shader_parameters/ScrollSpeed = 0.2000000095
+scale = Vector2(1.0489583, 1)
+texture = ExtResource("4_7hcu3")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1342529945]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_15nw4")
+instance_shader_parameters/ScrollSpeed = 0.30000001425
+scale = Vector2(1.0473958, 1)
+texture = ExtResource("6_ti4kv")
+centered = false
