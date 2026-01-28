@@ -25,7 +25,7 @@ func swapScene(scene_index: int):
 		return
 
 	#if current_scene: current_scene.queue_free()
-#
+
 	current_index = scene_index
 	#current_scene = scene[scene_index].instantiate()
 	#add_child(current_scene)
