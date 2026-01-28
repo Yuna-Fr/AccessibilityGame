@@ -11,10 +11,10 @@ const REBINDABLE_ACTIONS := [
 ]
 
 @export var move_up_btn : Button
-@export var move_down_btn : Button 
-@export var move_left_btn : Button 
-@export var move_right_btn : Button 
-@export var action_btn : Button 
+@export var move_down_btn : Button
+@export var move_left_btn : Button
+@export var move_right_btn : Button
+@export var action_btn : Button
 
 var waiting_for_input := false
 var action_to_rebind := ""
@@ -29,6 +29,14 @@ func _ready():
 	move_right_btn.pressed.connect(func(): start_rebind("Move_Right"))
 	action_btn.pressed.connect(func(): start_rebind("Action"))
 
+func getButton(action: String) -> Button :
+	if action == "Move_Up" : return move_up_btn
+	if action == "Move_Down" : return move_down_btn
+	if action == "Move_Left" : return move_left_btn
+	if action == "Move_Right" : return move_right_btn
+	if action == "Action" : return action_btn
+	return null
+
 #region Input Capture and Rebinding
 
 func _input(event):
@@ -38,25 +46,31 @@ func _input(event):
 		rebind_action(action_to_rebind, event)
 		waiting_for_input = false
 		action_to_rebind = ""
-		update_button_labels()
-		save_bindings()
 
 func start_rebind(action: String):
 	waiting_for_input = true
 	action_to_rebind = action
 
 func rebind_action(action: String, event: InputEventKey):
-	# Remove ONLY keyboard bindings for this action
+	for _action in REBINDABLE_ACTIONS:
+		if _action == action: 
+			continue # skip the action we're rebinding
+		for ev in InputMap.action_get_events(_action):
+			if ev is InputEventKey and ev.keycode == event.keycode:
+				InputMap.action_erase_event(_action, ev)
+				##TODO : make button red with getButton(action)
+				print("Removed duplicate key from: ", _action)
+
 	for ev in InputMap.action_get_events(action):
 		if ev is InputEventKey:
 			InputMap.action_erase_event(action, ev)
 
 	var new_event := InputEventKey.new()
 	new_event.keycode = event.keycode
-	new_event.pressed = true
-
 	InputMap.action_add_event(action, new_event)
 
+	update_button_labels()
+	save_bindings()
 
 func update_button_labels():
 	move_up_btn.text = "Move Up: " + get_action_key("Move_Up")
@@ -93,7 +107,6 @@ func load_bindings():
 		if not cfg.has_section_key("keys", action):
 			continue
 		
-		# Remove only keyboard bindings
 		for ev in InputMap.action_get_events(action):
 			if ev is InputEventKey:
 				InputMap.action_erase_event(action, ev)
