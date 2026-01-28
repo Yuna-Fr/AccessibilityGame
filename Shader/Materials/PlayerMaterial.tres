@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3256wy5h3r5i"]
+
+[ext_resource type="Shader" uid="uid://cf7h2qv1ugadw" path="res://Shader/ColorShader/PlayerShader.tres" id="1_wtkyr"]
+
+[resource]
+shader = ExtResource("1_wtkyr")
