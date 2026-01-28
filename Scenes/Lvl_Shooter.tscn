@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bvxtapckc23ri"]
 
+[ext_resource type="PackedScene" uid="uid://d0331r5yd5iuq" path="res://Prefabs/P_ParallaxSea.tscn" id="1_04mm5"]
 [ext_resource type="PackedScene" uid="uid://brmlnd31b5e24" path="res://Prefabs/P_Ship.tscn" id="1_aqr6t"]
 [ext_resource type="PackedScene" uid="uid://cqt45wfg6qm4k" path="res://Prefabs/P_Spawner.tscn" id="2_n81xb"]
 
 [node name="Shooter" type="Node2D" unique_id=844981688]
+
+[node name="ParallaxSea" parent="." unique_id=2126600029 instance=ExtResource("1_04mm5")]
 
 [node name="Ship" parent="." unique_id=1557541334 instance=ExtResource("1_aqr6t")]
 position = Vector2(300, 550)
