@@ -194,6 +194,8 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=758009649]
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
+scroll_vertical = 389
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
 layout_mode = 2
@@ -242,6 +244,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer" unique_id=2048314856]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=936789192]
 layout_mode = 2
@@ -253,6 +256,36 @@ layout_mode = 2
 text = "LIVES : 1"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=311657427]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=950466089]
+layout_mode = 2
+text = "ENEMY_SPAWN_RATE : 1"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=1124658195]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=150367728]
+layout_mode = 2
+text = "ENEMY_SCROLLING_SPEED : 1"
+
+[node name="HSlider3" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=849120938]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=412106033]
+layout_mode = 2
+text = "TIME_TO_SURVIVE : 1"
+
+[node name="HSlider4" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=600408585]
 layout_mode = 2
 max_value = 3.0
 rounded = true
@@ -271,6 +304,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer" unique_id=751783700]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=2123212582]
 layout_mode = 2
@@ -282,6 +316,16 @@ layout_mode = 2
 text = "LIVES : 1"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=1490762080]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=567294941]
+layout_mode = 2
+text = "ENEMY_SPAWN_RATE : 1"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=928253560]
 layout_mode = 2
 max_value = 3.0
 rounded = true
@@ -300,6 +344,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer" unique_id=1283841185]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=693265463]
 layout_mode = 2
@@ -390,16 +435,11 @@ layout_mode = 2
 text = "
 AUDIO"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
-layout_mode = 2
-value = 100.0
-tick_count = 10
-
 [node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=476298931]
 layout_mode = 2
 text = "MUSIC AUDIO : 100%"
 
-[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
 layout_mode = 2
 value = 100.0
 tick_count = 10
@@ -407,6 +447,11 @@ tick_count = 10
 [node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=150827393]
 layout_mode = 2
 text = "SFX AUDIO : 100%"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
+layout_mode = 2
+value = 100.0
+tick_count = 10
 
 [node name="CheckBox6" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=651614340]
 layout_mode = 2
