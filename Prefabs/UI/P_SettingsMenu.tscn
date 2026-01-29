@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://d0quhwhqloe4k"]
 
+[ext_resource type="Script" uid="uid://b3n3ehnkambj0" path="res://Scripts/S_MenuLayer.gd" id="1_6sgrq"]
 [ext_resource type="Script" uid="uid://f51qm3ejnsnl" path="res://Scripts/Managers/S_InputManager.gd" id="1_aofda"]
+[ext_resource type="Shader" uid="uid://yu476qmxdqi2" path="res://Prefabs/UI/P_SettingsMenuShader.gdshader" id="2_5yof3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_166xi"]
+shader = ExtResource("2_5yof3")
+shader_parameter/strength = 5.00000023424012
+shader_parameter/mix_percentage = 0.50000002375
 
 [node name="MenuLayer" type="CanvasLayer" unique_id=634841517]
+process_mode = 3
+script = ExtResource("1_6sgrq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1024405026]
+material = SubResource("ShaderMaterial_166xi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InputManagerMenu" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
 layout_mode = 3
