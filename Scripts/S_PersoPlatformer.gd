@@ -9,7 +9,9 @@ var canDie: bool = true
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
+@onready var coyoteTime = $CoyoteTimer
 @onready var timer = $Timer
+var coyoteOn: bool = false
 @onready var jumpSound = $SonSaut
 @export var respawnpoint : Node2D
 
@@ -62,13 +64,24 @@ func _physics_process(delta: float) -> void:
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
 			soundGround.play_random()
+			
+		if coyoteOn:
+			coyoteOn = false
+			coyoteTime.stop()
 		
-		if Input.is_action_just_pressed("Action"):
-			jumpSound.play_random()
-			velocity.y = -jump_speed * 2
+	else:
+		if !coyoteOn:
+			coyoteTime.start()
+			coyoteOn = true
+		
+	if Input.is_action_just_pressed("Move_Up") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+		jumpSound.play_random()
+		velocity.y = -jump_speed * 2
+		coyoteTime.stop()
+		coyoteOn = true
 		
 	if velocity.x > 0:
-		velocity.x -= friction
+		velocity.x -= friction	
 	elif velocity.x < 0:
 		velocity.x += friction
 	else:

@@ -45,4 +45,8 @@ Sounds = Array[AudioStream]([ExtResource("4_mclbp"), ExtResource("5_8h7bl"), Ext
 [node name="Timer" type="Timer" parent="." unique_id=1901071547]
 one_shot = true
 
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=334271534]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
