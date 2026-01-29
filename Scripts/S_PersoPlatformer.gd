@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var friction : float = 30
 @export var air_friction : float = 5
 var canDie: bool = true
-var OneButton: bool = true
+var OneButton: bool = false
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
