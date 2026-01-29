@@ -11,7 +11,7 @@ source = 5
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_52yrl"]
 output_port_for_preview = 0
-parameter_name = "BackgroundColorParameter"
+parameter_name = "BackgroundSeaColorParameter"
 qualifier = 1
 default_value_enabled = true
 

@@ -42,7 +42,6 @@ func _on_area_entered(body: Area2D) -> void:
 
 func diestate(delta):
 	sprite.rotate(5 * delta)
-	sprite.self_modulate(1,1,1,1*delta)
 	pass
 
 func die():
