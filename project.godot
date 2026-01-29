@@ -104,7 +104,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 PlayerColorParameter={
 "type": "color",
-"value": Color(1, 1, 1, 1)
+"value": Color(0.93, 0.93, 0.93, 1)
 }
 EnnemyColorParameter={
 "type": "color",
@@ -112,7 +112,7 @@ EnnemyColorParameter={
 }
 BackgroundColorParameter={
 "type": "color",
-"value": Color(0, 0.972549, 0.78431374, 1)
+"value": Color(0.17254902, 0.9137255, 1, 1)
 }
 BulletColorParameter={
 "type": "color",
