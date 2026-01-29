@@ -32,9 +32,10 @@ size_flags_vertical = 3
 
 [node name="TabContainer" type="TabContainer" parent="CenterContainer" unique_id=796310891]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 
 [node name="INPUTS" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=496747328 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
+visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -169,7 +170,6 @@ layout_mode = 2
 text = "Finish"
 
 [node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764]
-visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -177,3 +177,33 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY" unique_id=922855357]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=499274048]
+layout_mode = 2
+text = "ACCESSIBILITY"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=758009649]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=489001527]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1459356397]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 4.0
+max_value = 250.0
+value = 4.0
+suffix = "px"
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=839563511]
+layout_mode = 2
+text = "TEXT_SCALE"
