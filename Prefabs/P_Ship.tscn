@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://r5rahpacn5ml" path="res://Prefabs/P_Bullet.tscn" id="2_1aslw"]
 [ext_resource type="Texture2D" uid="uid://cda0krk6mtvvn" path="res://Textures/T_Ship.png" id="2_6wsb7"]
 [ext_resource type="Material" uid="uid://3256wy5h3r5i" path="res://Shader/Materials/PlayerMaterial.tres" id="3_0o135"]
+[ext_resource type="Script" uid="uid://cnng8j5lrxadt" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="5_8w34t"]
+[ext_resource type="AudioStream" uid="uid://cbsv5w35k8v13" path="res://Sound/Shoot/Shoot_1.wav" id="6_tk4ne"]
+[ext_resource type="AudioStream" uid="uid://800v83aj6hgi" path="res://Sound/Shoot/Shoot_2.wav" id="7_7avli"]
+[ext_resource type="AudioStream" uid="uid://dqhlj07sqcdw6" path="res://Sound/Shoot/Shoot_3.wav" id="8_v2r84"]
+[ext_resource type="AudioStream" uid="uid://odbkshgn6dgo" path="res://Sound/Engines/Spaceship.wav" id="9_tk4ne"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_334r5"]
 size = Vector2(100, 115)
@@ -42,5 +47,19 @@ collision_mask = 4
 position = Vector2(10.666666, 0.33333334)
 shape = SubResource("RectangleShape2D_1aslw")
 
+[node name="fireAudio" type="AudioStreamPlayer2D" parent="." unique_id=1840826038]
+bus = &"SFX"
+script = ExtResource("5_8w34t")
+Sounds = Array[AudioStream]([ExtResource("6_tk4ne"), ExtResource("7_7avli"), ExtResource("8_v2r84")])
+metadata/_custom_type_script = "uid://cnng8j5lrxadt"
+
+[node name="engineAudio" type="AudioStreamPlayer2D" parent="." unique_id=1476207716]
+stream = ExtResource("9_tk4ne")
+volume_db = -10.0
+pitch_scale = 1.2
+autoplay = true
+bus = &"SFX"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="engineAudio" to="." method="_on_engine_audio_finished"]

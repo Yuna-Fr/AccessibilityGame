@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://1amogcbxmwqq" path="res://Textures/NPC Car/ObstaclesVoitures_03.png" id="4_5tqfa"]
 [ext_resource type="Texture2D" uid="uid://d4k004t0var8g" path="res://Textures/NPC Car/ObstaclesVoitures_04.png" id="5_8wwjh"]
 [ext_resource type="Material" uid="uid://dei6beqa0tb60" path="res://Shader/Materials/EnnemyMaterial.tres" id="6_5tqfa"]
+[ext_resource type="Script" uid="uid://cnng8j5lrxadt" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="7_8wwjh"]
+[ext_resource type="AudioStream" uid="uid://cul1xm3raao8d" path="res://Sound/Crashs/Crash_voiture_1.wav" id="8_lqtt5"]
+[ext_resource type="AudioStream" uid="uid://dtccc2ciljanc" path="res://Sound/Crashs/Crash_voiture_2.wav" id="9_jsxnl"]
+[ext_resource type="AudioStream" uid="uid://dpdypdfruw40n" path="res://Sound/Crashs/Crash_voiture_3.wav" id="10_6eflr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk4ev"]
 size = Vector2(70, 112)
@@ -33,6 +37,12 @@ texture = ExtResource("3_lk3ax")
 [node name="Timer" type="Timer" parent="Area2D" unique_id=2142832264]
 wait_time = 0.1
 one_shot = true
+
+[node name="CrashAudio" type="AudioStreamPlayer2D" parent="Area2D" unique_id=2019196903]
+bus = &"SFX"
+script = ExtResource("7_8wwjh")
+Sounds = Array[AudioStream]([ExtResource("8_lqtt5"), ExtResource("9_jsxnl"), ExtResource("10_6eflr")])
+metadata/_custom_type_script = "uid://cnng8j5lrxadt"
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
