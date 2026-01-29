@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : float = 50
+@export var maxSpeed : float = 50.0
 @export var jump_speed : float = 500
 @export var gravity : float = 9.98
 @export var friction : float = 30
@@ -59,7 +60,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x -= speed
 	if Input.is_action_pressed("Move_Right"):
 		velocity.x += speed
-		
+	if velocity.x > maxSpeed:
+		velocity.x = maxSpeed
+	if velocity.x < -maxSpeed:
+		velocity.x = -maxSpeed
+	
 	if is_on_floor():
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
