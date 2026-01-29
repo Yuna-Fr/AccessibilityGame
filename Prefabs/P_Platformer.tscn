@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uwgen2t8pefg" path="res://Scripts/S_PersoPlatformer.gd" id="1_c8muk"]
 [ext_resource type="Texture2D" uid="uid://uav6ptk4pf83" path="res://Textures/PersoPlatform.png" id="1_giyi1"]
-[ext_resource type="Script" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="3_tpj53"]
+[ext_resource type="Script" uid="uid://cnng8j5lrxadt" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="3_tpj53"]
 [ext_resource type="AudioStream" uid="uid://yh5oy4jra7tb" path="res://Sound/Jump/Jump_1.wav" id="4_mclbp"]
 [ext_resource type="AudioStream" uid="uid://q0ew8kscq4g4" path="res://Sound/Land/Land_1.wav" id="4_wesf8"]
 [ext_resource type="AudioStream" uid="uid://ci0btprxaiwm1" path="res://Sound/Jump/Jump_2.wav" id="5_8h7bl"]
@@ -43,6 +43,10 @@ script = ExtResource("3_tpj53")
 Sounds = Array[AudioStream]([ExtResource("4_mclbp"), ExtResource("5_8h7bl"), ExtResource("6_wesf8")])
 
 [node name="Timer" type="Timer" parent="." unique_id=1901071547]
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=334271534]
+wait_time = 0.25
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

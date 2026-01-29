@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0331r5yd5iuq" path="res://Prefabs/P_ParallaxSea.tscn" id="1_04mm5"]
 [ext_resource type="PackedScene" uid="uid://brmlnd31b5e24" path="res://Prefabs/P_Ship.tscn" id="1_aqr6t"]
-[ext_resource type="PackedScene" path="res://Prefabs/P_Spawner.tscn" id="2_n81xb"]
+[ext_resource type="PackedScene" uid="uid://cqt45wfg6qm4k" path="res://Prefabs/P_Spawner.tscn" id="2_n81xb"]
 
 [node name="Shooter" type="Node2D" unique_id=844981688]
 
@@ -12,4 +12,5 @@
 position = Vector2(300, 550)
 
 [node name="Spawner" parent="." unique_id=2019538537 instance=ExtResource("2_n81xb")]
-position = Vector2(1980, -3)
+position = Vector2(2100, 100)
+SpawnLife = 2
