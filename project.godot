@@ -112,7 +112,7 @@ EnnemyColorParameter={
 }
 BackgroundColorParameter={
 "type": "color",
-"value": Color(1, 1, 1, 1)
+"value": Color(0, 0.972549, 0.78431374, 1)
 }
 BulletColorParameter={
 "type": "color",
@@ -129,4 +129,28 @@ BackgroundForestColorParameter={
 BackgroundSeaColorParameter={
 "type": "color",
 "value": Color(0.17254902, 0.9137255, 1, 1)
+}
+EnemyRoadColorParameter={
+"type": "color",
+"value": Color(1, 0.87058824, 0.47058824, 1)
+}
+EnemySeaParameter={
+"type": "color",
+"value": Color(0, 0, 0, 1)
+}
+PlayerRoadColorParameter={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+PlayerSeaColorParameter={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+PlayerPlatformerColorParameter={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}
+LevelPlatformerColorParameter={
+"type": "color",
+"value": Color(0.9882353, 0.9372549, 0.72156864, 1)
 }
