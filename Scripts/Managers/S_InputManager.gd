@@ -45,7 +45,6 @@ const CONTROLLER_AXIS_LABEL: Dictionary = {
 @export var action_gamepad : Button
 
 @export var reset_btn : Button
-@export var finish_btn : Button
 
 enum BindType { KEYBOARD, GAMEPAD }
 var bind_type : BindType
@@ -70,10 +69,6 @@ func _ready():
 	action_gamepad.pressed.connect(func(): start_rebind("Action", BindType.GAMEPAD))
 
 	reset_btn.pressed.connect(func(): reset_bindings())
-	finish_btn.pressed.connect(func(): finish())
-
-func finish(): #to delete tomorrow
-	self.visible = false
 
 #region Input Capture and Rebinding
 func reset_bindings():

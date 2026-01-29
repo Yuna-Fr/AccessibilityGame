@@ -1,13 +1,15 @@
-extends CharacterBody2D
+class_name PlatformerController extends CharacterBody2D
 
 @export var speed : float = 50
 @export var maxSpeed : float = 500.0
 @export var jump_speed : float = 500
+@export var coyoteAirTime = 0.25
 @export var gravity : float = 9.98
 @export var friction : float = 30
 @export var air_friction : float = 5
 var canDie: bool = true
-var OneButton: bool = false
+
+static var OneButton: bool = false
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
@@ -19,7 +21,6 @@ var coyoteOn: bool = false
 
 #Variables communes
 @export var life: int = 3
-#
 
 var original_pos_x
 var new_pos_x
@@ -31,7 +32,8 @@ func _ready() -> void:
 	#print(get_viewport().get_visible_rect().size)
 	#cam.limit_left = get_viewport().get_visible_rect().size.x
 	#cam.limit_left = 0
-	pass
+	coyoteTime.wait_time = coyoteAirTime
+	#pass
 
 func _physics_process(delta: float) -> void:
 	#new_pos_x =  self.global_position.x
@@ -86,7 +88,7 @@ func _physics_process(delta: float) -> void:
 			coyoteTime.start()
 			coyoteOn = true
 		
-	if Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+	if (Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down")) and ( !coyoteTime.is_stopped() or is_on_floor() ):
 		jumpSound.play_random()
 		velocity.y = -jump_speed * 2
 		coyoteTime.stop()
@@ -102,20 +104,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-
-
 func _on_timer_timeout() -> void:
 	position = respawnpoint.position
 	life -= 1
 
-	
-	pass # Replace with function body.
-
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	timer.start()
 	print("tombé")
-	pass # Replace with function body.
 
 func gameover():
 	queue_free()

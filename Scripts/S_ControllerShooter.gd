@@ -1,4 +1,4 @@
-class_name ControllerShooter extends CharacterBody2D
+class_name ShooterController extends CharacterBody2D
 
 @export var bullet_prefab : PackedScene
 @export var speed: float = 500.0
@@ -6,9 +6,9 @@ class_name ControllerShooter extends CharacterBody2D
 
 #Variables communes
 @export var life: int = 3
+static var OneButton: bool = false
 var isdead: bool = false
 var canDie: bool = true
-var OneButton: bool = false
 #
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
