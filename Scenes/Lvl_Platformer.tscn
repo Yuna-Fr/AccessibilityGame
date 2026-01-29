@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://l5qlxyfyhu3r"]
 
 [ext_resource type="PackedScene" uid="uid://2ep1y7t2h4xq" path="res://Prefabs/P_Platformer.tscn" id="1_6s8nc"]
-[ext_resource type="Shader" uid="uid://d28204bcav50j" path="res://Shader/ColorShader/BackgroundForestShader.tres" id="1_ocwxl"]
+[ext_resource type="Shader" uid="uid://546f61m5f2b2" path="res://Shader/ColorShader/BackgroundShader.tres" id="1_q70wk"]
 [ext_resource type="Texture2D" uid="uid://le33w3qehpme" path="res://Textures/Bloc.png" id="2_a4mmt"]
+[ext_resource type="Shader" uid="uid://5mj3ushs6nkj" path="res://Shader/Sh_AlphaScrollingTexture.tres" id="2_ocwxl"]
 [ext_resource type="Texture2D" uid="uid://dva1vmdjute6d" path="res://Textures/Mountains/Background_Forest_BG.png" id="4_g5sgj"]
 [ext_resource type="Material" uid="uid://b72bk3084ufaf" path="res://Shader/Materials/BackgroundMaterial.tres" id="5_kpbdu"]
 [ext_resource type="Texture2D" uid="uid://dseupitf13fxp" path="res://Textures/Mountains/Background_Forest_Clouds.png" id="5_ocwxl"]
@@ -11,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cnbkxkqpvm0o5" path="res://Textures/Mountains/Background_Forest_Arbres.png" id="8_eribn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eribn"]
-shader = ExtResource("1_ocwxl")
+shader = ExtResource("1_q70wk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q70wk"]
+shader = ExtResource("2_ocwxl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tyrno"]
 texture = ExtResource("2_a4mmt")
@@ -46,7 +50,8 @@ texture = ExtResource("4_g5sgj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="MountainParallax/CanvasLayer" unique_id=2138094670]
 texture_repeat = 2
-material = ExtResource("5_kpbdu")
+material = SubResource("ShaderMaterial_q70wk")
+instance_shader_parameters/ScrollSpeed = 0.030000001425
 position = Vector2(960, 540)
 scale = Vector2(1.0888889, 1.0888889)
 texture = ExtResource("5_ocwxl")

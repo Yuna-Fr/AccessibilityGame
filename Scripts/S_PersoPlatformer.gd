@@ -88,7 +88,7 @@ func _physics_process(delta: float) -> void:
 			coyoteTime.start()
 			coyoteOn = true
 		
-	if Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+	if (Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down")) and ( !coyoteTime.is_stopped() or is_on_floor() ):
 		jumpSound.play_random()
 		velocity.y = -jump_speed * 2
 		coyoteTime.stop()
