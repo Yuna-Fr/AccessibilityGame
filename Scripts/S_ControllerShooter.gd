@@ -13,7 +13,7 @@ var OneButton: bool = false
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 
-var auto_shoot: bool = true
+var auto_shoot: bool = false
 var can_shoot := true
 
 func _physics_process(delta):
