@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://ch8ktq1gmtv80" path="res://Scripts/S_ControllerCar.gd" id="1_rc56u"]
 [ext_resource type="Shader" uid="uid://cf7h2qv1ugadw" path="res://Shader/ColorShader/PlayerShader.tres" id="2_kfo2i"]
 [ext_resource type="Texture2D" uid="uid://c18dbmiy4jm50" path="res://Textures/T_Car.png" id="2_w0enm"]
+[ext_resource type="AudioStream" uid="uid://dp8pimouimmsm" path="res://Sound/Engines/Moteur.wav" id="4_kfo2i"]
+[ext_resource type="Script" uid="uid://cnng8j5lrxadt" path="res://Scripts/advanced_audio_stream_player_2d.gd" id="5_ng0yf"]
+[ext_resource type="AudioStream" uid="uid://cul1xm3raao8d" path="res://Sound/Crashs/Crash_voiture_1.wav" id="6_q6fkj"]
+[ext_resource type="AudioStream" uid="uid://dtccc2ciljanc" path="res://Sound/Crashs/Crash_voiture_2.wav" id="7_7vv7s"]
+[ext_resource type="AudioStream" uid="uid://dpdypdfruw40n" path="res://Sound/Crashs/Crash_voiture_3.wav" id="8_h7dxa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ng0yf"]
 shader = ExtResource("2_kfo2i")
@@ -42,6 +47,17 @@ shape = SubResource("RectangleShape2D_f6gr6")
 [node name="Timer" type="Timer" parent="." unique_id=1741391270]
 one_shot = true
 
+[node name="engineAudio" type="AudioStreamPlayer2D" parent="." unique_id=1348133394]
+stream = ExtResource("4_kfo2i")
+autoplay = true
+bus = &"SFX"
+
+[node name="crashAudio" type="AudioStreamPlayer2D" parent="." unique_id=641056900]
+script = ExtResource("5_ng0yf")
+Sounds = Array[AudioStream]([ExtResource("6_q6fkj"), ExtResource("7_7vv7s"), ExtResource("8_h7dxa")])
+metadata/_custom_type_script = "uid://cnng8j5lrxadt"
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="engineAudio" to="." method="_on_engine_audio_finished"]

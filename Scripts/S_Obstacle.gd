@@ -10,6 +10,7 @@ var isHit: bool = false
 
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
+@onready var crashAudio = $CrashAudio
 
 var life = 1
 
@@ -31,10 +32,13 @@ func _physics_process(delta):
 	
 
 func _on_body_entered(body: Node2D) -> void:
+	crashAudio.play_random()
+	crashAudio.reparent(get_tree().current_scene)
 	queue_free()
 	print("bouffon")
 
 func _on_area_entered(body: Area2D) -> void:
+	crashAudio.play_random()
 	isHit = true
 	timer.start()
 	life -=1
@@ -45,6 +49,8 @@ func diestate(delta):
 	pass
 
 func die():
+	crashAudio.play_random()
+	crashAudio.reparent(get_tree().current_scene)
 	queue_free()
 
 func setHp(hp: int):

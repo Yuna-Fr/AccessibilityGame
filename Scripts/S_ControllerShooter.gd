@@ -12,6 +12,8 @@ var canDie: bool = true
 #
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
+@onready var shootAudio = $fireAudio
+@onready var engineAudio = $engineAudio
 
 var auto_shoot: bool = false
 var can_shoot := true
@@ -55,6 +57,7 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func _shoot():
+	shootAudio.play_random()
 	can_shoot = false
 
 	var bullet = bullet_prefab.instantiate()
@@ -77,6 +80,7 @@ func diestate(delta):
 	MeshColor.rotate(20 * delta)
 
 func gameover():
+	GameSingletons.get_node("GameOverSound").play()
 	queue_free()
 	print("gameover")
 	pass
@@ -91,3 +95,7 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	die()
 	pass # Replace with function body.
+
+
+func _on_engine_audio_finished() -> void:
+	engineAudio.play()

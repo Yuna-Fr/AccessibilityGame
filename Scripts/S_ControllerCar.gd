@@ -8,6 +8,8 @@ static var OneButton: bool = false
 
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
+@onready var engineAudio = $engineAudio
+@onready var crashAudio = $crashAudio
 
 func _ready():
 	pass
@@ -54,8 +56,11 @@ func die():
 func diestate(delta):
 	#MeshColor.modulate(Color.RED)
 	MeshColor.rotate(20 * delta)
+	if not crashAudio.playing:
+		crashAudio.play_random()
 
 func gameover():
+	GameSingletons.get_node("GameOverSound").play()
 	queue_free()
 	print("gameover")
 	pass
@@ -64,3 +69,7 @@ func _on_timer_timeout() -> void:
 	isdead = false
 	MeshColor.rotation = 0
 	pass # Replace with function body.
+
+
+func _on_engine_audio_finished() -> void:
+	engineAudio.play()

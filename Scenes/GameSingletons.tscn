@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0quhwhqloe4k" path="res://Prefabs/UI/P_SettingsMenu.tscn" id="1_brlci"]
 [ext_resource type="AudioStream" uid="uid://d28fepqwharwc" path="res://Sound/Music/Music01.wav" id="2_brlci"]
 [ext_resource type="PackedScene" uid="uid://ciyofkvy5ljlf" path="res://Prefabs/UI/P_hud.tscn" id="3_tq3j3"]
+[ext_resource type="AudioStream" uid="uid://xg2wsedv55bv" path="res://Sound/Misc/GameOver.wav" id="4_axeu8"]
 
 [node name="SINGLETONS" type="Node" unique_id=2117218218]
 
@@ -17,5 +18,10 @@ autoplay = true
 bus = &"Music"
 
 [node name="MajorTom" parent="." unique_id=1170800278 instance=ExtResource("3_tq3j3")]
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=99995993]
+process_mode = 3
+stream = ExtResource("4_axeu8")
+bus = &"SFX"
 
 [connection signal="finished" from="Music" to="MenuLayer" method="_on_music_finished"]

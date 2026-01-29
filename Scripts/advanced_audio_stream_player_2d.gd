@@ -5,7 +5,7 @@ extends AudioStreamPlayer2D
 @export var loop : bool = false
 
 func play_random():
-	if Sounds.size():
+	if Sounds.size() > 0:
 		stream = self.Sounds.pick_random()
 		play()
 
