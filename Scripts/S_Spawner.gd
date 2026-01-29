@@ -1,11 +1,15 @@
 extends Node2D
 
 
-@export var prefab: PackedScene
+#@export var prefab: PackedScene
 @export var spawn_interval := 2.0
 @export var spawn_x := 1200.0 # hors écran à droite (exemple)
+@export var SpawnLife : int
+
+var prefab = Obstacle 
 
 var screen_height: float
+
 
 func _ready():
 	screen_height = get_viewport_rect().size.y -150
@@ -25,3 +29,7 @@ func _spawn():
 	instance.position = Vector2(spawn_x, random_y)
 	
 	add_child(instance)
+	var instancelogic = instance.get_node("Area2D")
+	print(instancelogic)
+	instancelogic.setHp(SpawnLife)
+	
