@@ -104,11 +104,11 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 PlayerColorParameter={
 "type": "color",
-"value": Color(0.93, 0.93, 0.93, 1)
+"value": Color(1, 1, 1, 1)
 }
 EnnemyColorParameter={
 "type": "color",
-"value": Color(1, 1, 1, 1)
+"value": Color(1, 0.8, 0.4627451, 1)
 }
 BackgroundColorParameter={
 "type": "color",
@@ -136,7 +136,7 @@ EnemyRoadColorParameter={
 }
 EnemySeaParameter={
 "type": "color",
-"value": Color(0, 0, 0, 1)
+"value": Color(1, 0.8, 0.4627451, 1)
 }
 PlayerRoadColorParameter={
 "type": "color",
