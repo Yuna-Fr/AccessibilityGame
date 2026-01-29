@@ -9,7 +9,7 @@
 size = Vector2(100, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6gr6"]
-size = Vector2(67.09887, 96)
+size = Vector2(60.59887, 90.66667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aslw"]
 size = Vector2(66.66667, 96.66667)
@@ -28,7 +28,7 @@ mesh = SubResource("QuadMesh_334r5")
 texture = ExtResource("2_6wsb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2135757618]
-position = Vector2(10.950564, 0)
+position = Vector2(7.7005644, 0)
 shape = SubResource("RectangleShape2D_f6gr6")
 
 [node name="Timer" type="Timer" parent="." unique_id=1123893634]
