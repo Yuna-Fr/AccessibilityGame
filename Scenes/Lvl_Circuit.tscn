@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddlfwk1da0blt"]
 
 [ext_resource type="PackedScene" uid="uid://uicbttlouc25" path="res://Prefabs/P_Car.tscn" id="1_334r5"]
-[ext_resource type="PackedScene" path="res://Prefabs/P_Spawner.tscn" id="2_334r5"]
+[ext_resource type="PackedScene" uid="uid://cqt45wfg6qm4k" path="res://Prefabs/P_Spawner.tscn" id="2_334r5"]
 [ext_resource type="Shader" uid="uid://cq77gtwe2vs3k" path="res://Shader/Sh_ScrollingTexture.tres" id="3_27g2j"]
 [ext_resource type="Texture2D" uid="uid://5p0ffiwlil7y" path="res://Textures/Background_Route.png" id="3_cyftx"]
 

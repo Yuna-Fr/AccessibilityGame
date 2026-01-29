@@ -8,35 +8,29 @@ class_name ControllerShooter extends CharacterBody2D
 @export var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
-#
+
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 
 var can_shoot := true
 
 func _physics_process(delta):
-	
-	if life==0 && canDie:
+	if life==0 && canDie: 
 		gameover()
 
-	if isdead == true:
+	if isdead == true: 
 		diestate(delta)
+		return
 	
-	if Input.is_action_pressed("Action") and can_shoot: _shoot()
+	if Input.is_action_pressed("Action") and can_shoot: 
+		_shoot()
 	
 	# Movements
-	var direction_y := 0.0
-	var direction_x := 0.0
-	if isdead == false:
-		if Input.is_action_pressed("Move_Up"): direction_y -= 1
-		if Input.is_action_pressed("Move_Down"): direction_y += 1
-		if Input.is_action_pressed("Move_Left"): direction_x -= 1
-		if Input.is_action_pressed("Move_Left"): direction_x -= 1
-		if Input.is_action_pressed("Move_Right"): direction_x += 1
+	var direction := Vector2(
+		Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"),
+		Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up"))
 
-	var direction = Vector2(direction_x, direction_y).normalized()
-	velocity = direction * speed
-
+	velocity = direction.normalized() * speed
 	move_and_slide()
 
 	# Clamp position to screen
