@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@export var music : AudioStreamPlayer
+
 var paused = false
 
 func _ready() -> void:
@@ -10,3 +12,8 @@ func _input(event: InputEvent) -> void:
 		paused = !paused
 		self.visible = paused
 		get_tree().paused = paused
+
+
+func _on_music_finished() -> void:
+	if music.stream != null:
+		music.play()

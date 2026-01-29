@@ -9,6 +9,9 @@ shader = ExtResource("2_5yof3")
 shader_parameter/strength = 5.00000023424012
 shader_parameter/mix_percentage = 0.50000002375
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yof3"]
+bg_color = Color(0.86, 0.5016667, 0, 0.5882353)
+
 [node name="MenuLayer" type="CanvasLayer" unique_id=634841517]
 process_mode = 3
 script = ExtResource("1_6sgrq")
@@ -32,6 +35,7 @@ size_flags_vertical = 3
 
 [node name="TabContainer" type="TabContainer" parent="CenterContainer" unique_id=796310891]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yof3")
 current_tab = 1
 
 [node name="INPUTS" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=496747328 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
@@ -190,20 +194,137 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=758009649]
 layout_mode = 2
 size_flags_vertical = 3
+scroll_vertical = 312
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=489001527]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer" unique_id=702657324]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380909605]
+layout_mode = 2
+text = "TEXT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=489001527]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
-[node name="SpinBox" type="SpinBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=1459356397]
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1459356397]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 min_value = 4.0
 max_value = 250.0
 value = 4.0
 suffix = "px"
 
-[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/HBoxContainer" unique_id=839563511]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=839563511]
 layout_mode = 2
 text = "TEXT_SCALE"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=655627762]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=695090894]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+min_value = 4.0
+max_value = 250.0
+value = 4.0
+suffix = "px"
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=504281072]
+layout_mode = 2
+text = "TEXT_WIDTH"
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1323541937]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "CAPITALIZE"
+
+[node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=757381998]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "HIGH_CONTRAST_TEXT_BG"
+
+[node name="CheckBox3" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1022792766]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "AUDIODESCRIPTION"
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1506387504]
+layout_mode = 2
+text = "
+COLORS"
+
+[node name="CheckBox4" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1864300570]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "DALTONISM_COLORS"
+
+[node name="CheckBox5" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=75751518]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "HIGH_CONTRAST_COLORS"
+
+[node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=139457472]
+layout_mode = 2
+text = "
+AUDIO"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
+layout_mode = 2
+value = 100.0
+tick_count = 10
+
+[node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=476298931]
+layout_mode = 2
+text = "MUSIC AUDIO : 100%"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
+layout_mode = 2
+value = 100.0
+tick_count = 10
+
+[node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=150827393]
+layout_mode = 2
+text = "SFX AUDIO : 100%"
+
+[node name="CheckBox6" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=651614340]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+button_pressed = true
+text = "UI_SOUNDS"
+
+[node name="CheckBox7" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=407291049]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "OBSTACLES_SOUNDS_WARNINGS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=753558054]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/HBoxContainer" unique_id=1730822678]
+layout_mode = 2
+text = "REVERT_ALL"
+
+[node name="Container" type="Container" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/HBoxContainer" unique_id=574878612]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/HBoxContainer" unique_id=1695036669]
+layout_mode = 2
+text = "CANCEL"
+
+[node name="Button2" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/HBoxContainer" unique_id=1033449098]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "SAVE"

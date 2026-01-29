@@ -5,10 +5,14 @@
 
 [node name="SINGLETONS" type="Node" unique_id=2117218218]
 
-[node name="MenuLayer" parent="." unique_id=634841517 instance=ExtResource("1_brlci")]
+[node name="MenuLayer" parent="." unique_id=634841517 node_paths=PackedStringArray("music") instance=ExtResource("1_brlci")]
+music = NodePath("../Music")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1287726723]
+process_mode = 3
 stream = ExtResource("2_brlci")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[connection signal="finished" from="Music" to="MenuLayer" method="_on_music_finished"]
