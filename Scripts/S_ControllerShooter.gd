@@ -17,12 +17,12 @@ var auto_shoot: bool = true
 var can_shoot := true
 
 func _physics_process(delta):
-	
-	if life==0 && canDie:
+	if life==0 && canDie: 
 		gameover()
 
-	if isdead == true:
+	if isdead == true: 
 		diestate(delta)
+		return
 	
 	if Input.is_action_pressed("Action") and can_shoot and !auto_shoot: _shoot()
 	else: if can_shoot and auto_shoot: _shoot()
@@ -46,6 +46,7 @@ func _physics_process(delta):
 	var direction = Vector2(direction_x, direction_y).normalized()
 	velocity = direction * speed
 
+	velocity = direction.normalized() * speed
 	move_and_slide()
 
 	# Clamp position to screen

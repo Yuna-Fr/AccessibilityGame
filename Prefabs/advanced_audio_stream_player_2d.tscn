@@ -4,3 +4,5 @@
 
 [node name="AdvancedAudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=711830928]
 script = ExtResource("1_sa0rl")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
