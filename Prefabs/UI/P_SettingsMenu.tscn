@@ -194,6 +194,7 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=758009649]
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
 layout_mode = 2
@@ -229,92 +230,201 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "HARD"
 
-[node name="FoldableContainer" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1734365370]
+[node name="RacingFoldableContainer" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1734365370]
 layout_mode = 2
 title = "RACING_GAME"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer" unique_id=596906713]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer" unique_id=596906713]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer" unique_id=2048314856]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer" unique_id=2048314856]
 layout_mode = 2
+theme_override_constants/separation = 6
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=936789192]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=936789192]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "ONE_BUTTON"
 
-[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=660012919]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=660012919]
 layout_mode = 2
 text = "LIVES : 1"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=311657427]
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=311657427]
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
-[node name="FoldableContainer2" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=939822771]
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=950466089]
+layout_mode = 2
+text = "ENEMY_SPAWN_RATE : 1"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=1124658195]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=150367728]
+layout_mode = 2
+text = "ENEMY_SCROLLING_SPEED : 1"
+
+[node name="HSlider3" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=849120938]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=412106033]
+layout_mode = 2
+text = "TIME_TO_SURVIVE : 1"
+
+[node name="HSlider4" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer" unique_id=600408585]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="ShootFoldableContainer2" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=939822771]
 layout_mode = 2
 title = "SHOOT_EM_UP"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2" unique_id=1535290348]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2" unique_id=1535290348]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer" unique_id=751783700]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer" unique_id=751783700]
 layout_mode = 2
+theme_override_constants/separation = 6
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=2123212582]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=2123212582]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "ONE_BUTTON"
 
-[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=327047948]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=327047948]
 layout_mode = 2
 text = "LIVES : 1"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=1490762080]
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1490762080]
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
-[node name="FoldableContainer3" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=805156690]
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=567294941]
+layout_mode = 2
+text = "ENEMY_SPAWN_RATE : 1"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=928253560]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1759750284]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "AUTO_SHOOT"
+
+[node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=732252879]
+layout_mode = 2
+text = "SHIP_BULLET_RATE : 1"
+
+[node name="HSlider3" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=288047161]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=733771410]
+layout_mode = 2
+text = "ENEMY_LIFE : 1"
+
+[node name="HSlider4" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=953095407]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=919497815]
+layout_mode = 2
+text = "TIME_TO_SURVIVE : 1"
+
+[node name="HSlider5" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1957139166]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="PlatformFoldableContainer3" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=805156690]
 layout_mode = 2
 title = "PLATFORMER"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3" unique_id=980889046]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3" unique_id=980889046]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer" unique_id=1283841185]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer" unique_id=1283841185]
 layout_mode = 2
+theme_override_constants/separation = 6
 
-[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=693265463]
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=693265463]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "ONE_BUTTON"
 
-[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=800443297]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=800443297]
 layout_mode = 2
 text = "LIVES : 1"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=1415320337]
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1415320337]
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1276211939]
+layout_mode = 2
+text = "COYOTE_TIME : 1"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=639295357]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=930533303]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "SNAPPING"
+
+[node name="CheckBox3" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1083649286]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "DEATH_POSITION_RESSPAWN"
+
+[node name="Label7" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1476666605]
+layout_mode = 2
+text = "LIFEBAR_COLOR"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=351055739]
+layout_mode = 2
+text = "COLOR"
+color = Color(0.50534403, 0.5053441, 0.50534403, 1)
+edit_alpha = false
+edit_intensity = false
 
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380909605]
 layout_mode = 2
@@ -390,16 +500,11 @@ layout_mode = 2
 text = "
 AUDIO"
 
-[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
-layout_mode = 2
-value = 100.0
-tick_count = 10
-
 [node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=476298931]
 layout_mode = 2
 text = "MUSIC AUDIO : 100%"
 
-[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
 layout_mode = 2
 value = 100.0
 tick_count = 10
@@ -407,6 +512,11 @@ tick_count = 10
 [node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=150827393]
 layout_mode = 2
 text = "SFX AUDIO : 100%"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
+layout_mode = 2
+value = 100.0
+tick_count = 10
 
 [node name="CheckBox6" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=651614340]
 layout_mode = 2
