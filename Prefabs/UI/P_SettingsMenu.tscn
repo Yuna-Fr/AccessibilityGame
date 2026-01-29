@@ -21,8 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InputManagerMenu" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
-layout_mode = 3
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2110654042]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,6 +29,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="CenterContainer" unique_id=796310891]
+layout_mode = 2
+current_tab = 0
+
+[node name="INPUTS" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=496747328 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 script = ExtResource("1_aofda")
 move_up_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Up")
 move_down_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Down")
@@ -41,116 +54,126 @@ move_down_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Down
 move_left_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Left")
 move_right_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Right")
 action_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Action")
-reset_btn = NodePath("Button_Reset")
-finish_btn = NodePath("Button_Finish")
+reset_btn = NodePath("CenterContainer/HBoxContainer2/Button_Reset")
+finish_btn = NodePath("CenterContainer/HBoxContainer2/Button_Finish")
+metadata/_tab_index = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="InputManagerMenu" unique_id=1196798357]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="InputManagerMenu/CenterContainer" unique_id=2032737268]
+[node name="CenterContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/INPUTS" unique_id=1446558141]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="VActions" type="VBoxContainer" parent="InputManagerMenu/CenterContainer/HBoxContainer" unique_id=1337945662]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer" unique_id=54431618]
+layout_mode = 2
+text = "KEYBINDS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/INPUTS/CenterContainer" unique_id=2032737268]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="VActions" type="VBoxContainer" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer" unique_id=1337945662]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 13
 
-[node name="Label" type="Label" parent="InputManagerMenu/CenterContainer/HBoxContainer/VActions" unique_id=215830337]
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VActions" unique_id=215830337]
 layout_mode = 2
 text = "Move Up"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="InputManagerMenu/CenterContainer/HBoxContainer/VActions" unique_id=1069024871]
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VActions" unique_id=1069024871]
 layout_mode = 2
 text = "Move Down"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="InputManagerMenu/CenterContainer/HBoxContainer/VActions" unique_id=2079389423]
+[node name="Label3" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VActions" unique_id=2079389423]
 layout_mode = 2
 text = "Move Left"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="InputManagerMenu/CenterContainer/HBoxContainer/VActions" unique_id=1249085456]
+[node name="Label4" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VActions" unique_id=1249085456]
 layout_mode = 2
 text = "Move Right"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="InputManagerMenu/CenterContainer/HBoxContainer/VActions" unique_id=576201921]
+[node name="Label5" type="Label" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VActions" unique_id=576201921]
 layout_mode = 2
 text = "Action"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="VKeyboard" type="VBoxContainer" parent="InputManagerMenu/CenterContainer/HBoxContainer" unique_id=85843082]
+[node name="VKeyboard" type="VBoxContainer" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer" unique_id=85843082]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button_Up" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VKeyboard" unique_id=562202129]
+[node name="Button_Up" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard" unique_id=562202129]
 layout_mode = 2
 text = "ggg"
 
-[node name="Button_Down" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VKeyboard" unique_id=1343122821]
+[node name="Button_Down" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard" unique_id=1343122821]
 layout_mode = 2
 text = "gggg"
 
-[node name="Button_Left" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VKeyboard" unique_id=216509703]
+[node name="Button_Left" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard" unique_id=216509703]
 layout_mode = 2
 text = "ggg"
 
-[node name="Button_Right" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VKeyboard" unique_id=1761924509]
+[node name="Button_Right" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard" unique_id=1761924509]
 layout_mode = 2
 text = "gggg"
 
-[node name="Button_Action" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VKeyboard" unique_id=1488754318]
+[node name="Button_Action" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard" unique_id=1488754318]
 layout_mode = 2
 text = "fgg"
 
-[node name="VGamepad" type="VBoxContainer" parent="InputManagerMenu/CenterContainer/HBoxContainer" unique_id=473465155]
+[node name="VGamepad" type="VBoxContainer" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer" unique_id=473465155]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button_Up" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VGamepad" unique_id=893888169]
+[node name="Button_Up" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VGamepad" unique_id=893888169]
 layout_mode = 2
 text = "ggg"
 
-[node name="Button_Down" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VGamepad" unique_id=615650795]
+[node name="Button_Down" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VGamepad" unique_id=615650795]
 layout_mode = 2
 text = "gggg"
 
-[node name="Button_Left" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VGamepad" unique_id=14389287]
+[node name="Button_Left" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VGamepad" unique_id=14389287]
 layout_mode = 2
 text = "ggg"
 
-[node name="Button_Right" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VGamepad" unique_id=1762527779]
+[node name="Button_Right" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VGamepad" unique_id=1762527779]
 layout_mode = 2
 text = "gggg"
 
-[node name="Button_Action" type="Button" parent="InputManagerMenu/CenterContainer/HBoxContainer/VGamepad" unique_id=36295556]
+[node name="Button_Action" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VGamepad" unique_id=36295556]
 layout_mode = 2
 text = "fgg"
 
-[node name="Button_Reset" type="Button" parent="InputManagerMenu" unique_id=1975398323]
-layout_mode = 0
-offset_left = 964.0
-offset_top = 652.0
-offset_right = 1015.0
-offset_bottom = 683.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TabContainer/INPUTS/CenterContainer" unique_id=326650561]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="Button_Reset" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer2" unique_id=1975398323]
+layout_mode = 2
 text = "Reset"
 
-[node name="Button_Finish" type="Button" parent="InputManagerMenu" unique_id=1693392703]
-layout_mode = 0
-offset_left = 1026.0
-offset_top = 653.0
-offset_right = 1080.0
-offset_bottom = 684.0
+[node name="Button_Finish" type="Button" parent="CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer2" unique_id=1693392703]
+layout_mode = 2
 text = "Finish"
+
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_tab_index = 1
