@@ -104,7 +104,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 PlayerColorParameter={
 "type": "color",
-"value": Color(0.93, 0.93, 0.93, 1)
+"value": Color(0.009343989, 0.008430045, 0.06381294, 1)
 }
 EnnemyColorParameter={
 "type": "color",
@@ -129,26 +129,6 @@ BackgroundForestColorParameter={
 BackgroundSeaColorParameter={
 "type": "color",
 "value": Color(0.17254902, 0.9137255, 1, 1)
-}
-EnemyRoadColorParameter={
-"type": "color",
-"value": Color(1, 0.87058824, 0.47058824, 1)
-}
-EnemySeaParameter={
-"type": "color",
-"value": Color(0, 0, 0, 1)
-}
-PlayerRoadColorParameter={
-"type": "color",
-"value": Color(1, 1, 1, 1)
-}
-PlayerSeaColorParameter={
-"type": "color",
-"value": Color(1, 1, 1, 1)
-}
-PlayerPlatformerColorParameter={
-"type": "color",
-"value": Color(1, 1, 1, 1)
 }
 LevelPlatformerColorParameter={
 "type": "color",
