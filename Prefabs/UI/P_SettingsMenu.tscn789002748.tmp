@@ -169,7 +169,7 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("s_one_button", "p_one_button")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -177,8 +177,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 script = ExtResource("4_166xi")
-s_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/CheckBox")
-p_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox")
 metadata/_tab_index = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY" unique_id=922855357]
@@ -208,12 +206,10 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
 [node name="Label6" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=907657160]
-visible = false
 layout_mode = 2
 text = "GAMEPLAY"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=360411686]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 15
 
@@ -233,7 +229,6 @@ size_flags_horizontal = 3
 text = "HARD"
 
 [node name="RacingFoldableContainer" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1734365370]
-visible = false
 layout_mode = 2
 title = "RACING_GAME"
 
@@ -314,66 +309,55 @@ theme_override_constants/h_separation = 15
 text = "ONE_BUTTON"
 
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=327047948]
-visible = false
 layout_mode = 2
 text = "LIVES : 1"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1490762080]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=567294941]
-visible = false
 layout_mode = 2
 text = "ENEMY_SPAWN_RATE : 1"
 
 [node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=928253560]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1759750284]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "AUTO_SHOOT"
 
 [node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=732252879]
-visible = false
 layout_mode = 2
 text = "SHIP_BULLET_RATE : 1"
 
 [node name="HSlider3" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=288047161]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=733771410]
-visible = false
 layout_mode = 2
 text = "ENEMY_LIFE : 1"
 
 [node name="HSlider4" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=953095407]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=919497815]
-visible = false
 layout_mode = 2
 text = "TIME_TO_SURVIVE : 1"
 
 [node name="HSlider5" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1957139166]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
@@ -400,48 +384,40 @@ theme_override_constants/h_separation = 15
 text = "ONE_BUTTON"
 
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=800443297]
-visible = false
 layout_mode = 2
 text = "LIVES : 1"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1415320337]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1276211939]
-visible = false
 layout_mode = 2
 text = "COYOTE_TIME : 1"
 
 [node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=639295357]
-visible = false
 layout_mode = 2
 max_value = 3.0
 rounded = true
 tick_count = 4
 
 [node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=930533303]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "SNAPPING"
 
 [node name="CheckBox3" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1083649286]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
-text = "DEATH_POSITION_RESPAWN"
+text = "DEATH_POSITION_RESSPAWN"
 
 [node name="Label7" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1476666605]
-visible = false
 layout_mode = 2
 text = "LIFEBAR_COLOR"
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=351055739]
-visible = false
 layout_mode = 2
 text = "COLOR"
 color = Color(0.50534403, 0.5053441, 0.50534403, 1)
@@ -449,13 +425,11 @@ edit_alpha = false
 edit_intensity = false
 
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380909605]
-visible = false
 layout_mode = 2
 text = "
 TEXT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=489001527]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
@@ -473,7 +447,6 @@ layout_mode = 2
 text = "TEXT_SCALE"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=655627762]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
@@ -491,78 +464,65 @@ layout_mode = 2
 text = "TEXT_WIDTH"
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1323541937]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "CAPITALIZE"
 
 [node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=757381998]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "HIGH_CONTRAST_TEXT_BG"
 
 [node name="CheckBox3" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1022792766]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "AUDIODESCRIPTION"
 
 [node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1506387504]
-visible = false
 layout_mode = 2
 text = "
 COLORS"
 
 [node name="CheckBox4" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1864300570]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "DALTONISM_COLORS"
 
 [node name="CheckBox5" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=75751518]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "HIGH_CONTRAST_COLORS"
 
 [node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=139457472]
-visible = false
 layout_mode = 2
 text = "
 AUDIO"
 
 [node name="Label4" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=476298931]
-visible = false
 layout_mode = 2
 text = "MUSIC AUDIO : 100%"
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070348941]
-visible = false
 layout_mode = 2
 value = 100.0
 tick_count = 10
 
 [node name="Label5" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=150827393]
-visible = false
 layout_mode = 2
 text = "SFX AUDIO : 100%"
 
 [node name="HSlider2" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=95096237]
-visible = false
 layout_mode = 2
 value = 100.0
 tick_count = 10
 
 [node name="CheckBox6" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=651614340]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 button_pressed = true
 text = "UI_SOUNDS"
 
 [node name="CheckBox7" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=407291049]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "OBSTACLES_SOUNDS_WARNINGS"
