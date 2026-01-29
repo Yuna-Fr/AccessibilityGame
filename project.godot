@@ -108,11 +108,11 @@ PlayerColorParameter={
 }
 EnnemyColorParameter={
 "type": "color",
-"value": Color(1, 0.8, 0.4627451, 1)
+"value": Color(1, 1, 1, 1)
 }
 BackgroundColorParameter={
 "type": "color",
-"value": Color(0.17254902, 0.9137255, 1, 1)
+"value": Color(1, 1, 1, 1)
 }
 BulletColorParameter={
 "type": "color",
