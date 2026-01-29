@@ -4,6 +4,7 @@ class_name ControllerCar extends CharacterBody2D
 @export var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
+var OneButton: bool = false
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 
@@ -19,9 +20,15 @@ func _physics_process(delta):
 	if isdead == true:
 		diestate(delta)
 	
-	if isdead == false:
+	if isdead == false && OneButton == false:
 		if Input.is_action_pressed("Move_Up"): direction -= 1
 		if Input.is_action_pressed("Move_Down"): direction += 1
+		
+	if isdead == false && OneButton == true:
+		if!(Input.is_action_pressed("Move_Down")):
+			direction -= 1
+		if Input.is_action_pressed("Move_Down"): direction += 1
+
 
 	velocity.y = direction * speed
 	move_and_slide()

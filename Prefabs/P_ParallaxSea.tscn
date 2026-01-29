@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0331r5yd5iuq"]
 
-[ext_resource type="Shader" uid="uid://546f61m5f2b2" path="res://Shader/ColorShader/BackgroundShader.tres" id="1_4a87c"]
+[ext_resource type="Shader" uid="uid://546f61m5f2b2" path="res://Shader/ColorShader/BackgroundSeaShader.tres" id="1_4a87c"]
 [ext_resource type="Texture2D" uid="uid://b3u1nedk7jagn" path="res://Textures/Scrolling sea/Background_Waves_BG.png" id="1_wu20n"]
 [ext_resource type="Shader" uid="uid://5mj3ushs6nkj" path="res://Shader/Sh_AlphaScrollingTexture.tres" id="2_4a87c"]
 [ext_resource type="Texture2D" uid="uid://doy0keudmus5s" path="res://Textures/Scrolling sea/Background_Waves_BG2.png" id="3_an6tc"]
