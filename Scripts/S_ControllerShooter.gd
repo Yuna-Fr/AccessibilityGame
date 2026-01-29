@@ -8,10 +8,12 @@ class_name ControllerShooter extends CharacterBody2D
 @export var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
+var OneButton: bool = false
 #
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 
+var auto_shoot: bool = true
 var can_shoot := true
 
 func _physics_process(delta):
@@ -22,17 +24,24 @@ func _physics_process(delta):
 	if isdead == true:
 		diestate(delta)
 	
-	if Input.is_action_pressed("Action") and can_shoot: _shoot()
+	if Input.is_action_pressed("Action") and can_shoot and !auto_shoot: _shoot()
+	else: if can_shoot and auto_shoot: _shoot()
 	
 	# Movements
 	var direction_y := 0.0
 	var direction_x := 0.0
-	if isdead == false:
+	if isdead == false && OneButton == false:
 		if Input.is_action_pressed("Move_Up"): direction_y -= 1
 		if Input.is_action_pressed("Move_Down"): direction_y += 1
 		if Input.is_action_pressed("Move_Left"): direction_x -= 1
 		if Input.is_action_pressed("Move_Left"): direction_x -= 1
 		if Input.is_action_pressed("Move_Right"): direction_x += 1
+
+	if isdead == false && OneButton == true:
+		if!(Input.is_action_pressed("Move_Down")):
+			direction_y -= 1
+		if Input.is_action_pressed("Move_Down"): direction_y += 1
+		if can_shoot: _shoot()
 
 	var direction = Vector2(direction_x, direction_y).normalized()
 	velocity = direction * speed
