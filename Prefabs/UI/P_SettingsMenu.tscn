@@ -194,7 +194,6 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=758009649]
 layout_mode = 2
 size_flags_vertical = 3
-scroll_vertical = 369
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
 layout_mode = 2
@@ -207,9 +206,120 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
+[node name="Label6" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=907657160]
+layout_mode = 2
+text = "GAMEPLAY"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=360411686]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2078203110]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EASY"
+
+[node name="Button2" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=662688946]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MEDIUM"
+
+[node name="Button3" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1745197770]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HARD"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1734365370]
+layout_mode = 2
+title = "RACING_GAME"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer" unique_id=596906713]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer" unique_id=2048314856]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=936789192]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "ONE_BUTTON"
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=660012919]
+layout_mode = 2
+text = "LIVES : 1"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer/MarginContainer/VBoxContainer" unique_id=311657427]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=939822771]
+layout_mode = 2
+title = "SHOOT_EM_UP"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2" unique_id=1535290348]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer" unique_id=751783700]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=2123212582]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "ONE_BUTTON"
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=327047948]
+layout_mode = 2
+text = "LIVES : 1"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer2/MarginContainer/VBoxContainer" unique_id=1490762080]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="FoldableContainer3" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=805156690]
+layout_mode = 2
+title = "PLATFORMER"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3" unique_id=980889046]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer" unique_id=1283841185]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=693265463]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "ONE_BUTTON"
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=800443297]
+layout_mode = 2
+text = "LIVES : 1"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FoldableContainer3/MarginContainer/VBoxContainer" unique_id=1415320337]
+layout_mode = 2
+max_value = 3.0
+rounded = true
+tick_count = 4
+
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380909605]
 layout_mode = 2
-text = "TEXT"
+text = "
+TEXT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=489001527]
 layout_mode = 2
@@ -308,11 +418,6 @@ text = "UI_SOUNDS"
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "OBSTACLES_SOUNDS_WARNINGS"
-
-[node name="Label6" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=907657160]
-layout_mode = 2
-text = "
-GAMEPLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=753558054]
 layout_mode = 2
