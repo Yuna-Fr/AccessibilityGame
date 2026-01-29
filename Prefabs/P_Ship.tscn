@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkfbvgte5g52u" path="res://Scripts/S_ControllerShooter.gd" id="1_6wsb7"]
 [ext_resource type="PackedScene" uid="uid://r5rahpacn5ml" path="res://Prefabs/P_Bullet.tscn" id="2_1aslw"]
 [ext_resource type="Texture2D" uid="uid://cda0krk6mtvvn" path="res://Textures/T_Ship.png" id="2_6wsb7"]
+[ext_resource type="Material" uid="uid://3256wy5h3r5i" path="res://Shader/Materials/PlayerMaterial.tres" id="3_0o135"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_334r5"]
 size = Vector2(100, 115)
@@ -22,6 +23,7 @@ bullet_prefab = ExtResource("2_1aslw")
 reload_time = 0.5
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1382922189]
+material = ExtResource("3_0o135")
 mesh = SubResource("QuadMesh_334r5")
 texture = ExtResource("2_6wsb7")
 
