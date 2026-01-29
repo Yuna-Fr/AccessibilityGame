@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ciyofkvy5ljlf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtkup"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_2sfmh"]
+font_size = 42
+
+[node name="MajorTom" type="CanvasLayer" unique_id=1170800278]
+
+[node name="Control" type="Control" parent="." unique_id=278617624]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1607801240]
+layout_mode = 0
+offset_right = 684.0
+offset_bottom = 119.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer" unique_id=71201927]
+layout_mode = 2
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/MarginContainer" unique_id=1711472404]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 5.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ProgressBar" unique_id=1523743957]
+layout_mode = 0
+offset_right = 624.0
+offset_bottom = 59.0
+text = "LIFE : "
+label_settings = SubResource("LabelSettings_dtkup")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control" unique_id=1241473431]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1202.0
+offset_right = 1940.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="Control/MarginContainer2" unique_id=1708990193]
+layout_mode = 2
+text = "TIMER : "
+label_settings = SubResource("LabelSettings_2sfmh")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer2" unique_id=198650540]
+layout_mode = 2
+color = Color(0, 0, 0, 0.25490198)
