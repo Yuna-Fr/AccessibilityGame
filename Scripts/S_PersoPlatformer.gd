@@ -3,6 +3,7 @@ class_name PlatformerController extends CharacterBody2D
 @export var speed : float = 50
 @export var maxSpeed : float = 500.0
 @export var jump_speed : float = 500
+@export var coyoteAirTime = 0.25
 @export var gravity : float = 9.98
 @export var friction : float = 30
 @export var air_friction : float = 5
@@ -31,7 +32,8 @@ func _ready() -> void:
 	#print(get_viewport().get_visible_rect().size)
 	#cam.limit_left = get_viewport().get_visible_rect().size.x
 	#cam.limit_left = 0
-	pass
+	coyoteTime.wait_time = coyoteAirTime
+	#pass
 
 func _physics_process(delta: float) -> void:
 	#new_pos_x =  self.global_position.x
