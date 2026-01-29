@@ -4,7 +4,7 @@
 
 [node name="MenuLayer" type="CanvasLayer" unique_id=634841517]
 
-[node name="Control" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "reset_btn", "finish_btn")]
+[node name="Control" type="Control" parent="." unique_id=1464943467 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn", "finish_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,11 @@ move_down_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Down")
 move_left_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Left")
 move_right_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Right")
 action_btn = NodePath("CenterContainer/HBoxContainer/VKeyboard/Button_Action")
+move_up_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Up")
+move_down_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Down")
+move_left_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Left")
+move_right_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Right")
+action_gamepad = NodePath("CenterContainer/HBoxContainer/VGamepad/Button_Action")
 reset_btn = NodePath("Button_Reset")
 finish_btn = NodePath("Button_Finish")
 
