@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 
 const CONFIG_PATH := "user://keybindings.cfg"
 const AXIS_DEADZONE := 0.5
