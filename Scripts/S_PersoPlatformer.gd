@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 @export var speed : float = 50
+@export var maxSpeed : float = 500.0
 @export var jump_speed : float = 500
 @export var gravity : float = 9.98
 @export var friction : float = 30
 @export var air_friction : float = 5
 var canDie: bool = true
+var OneButton: bool = false
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
@@ -54,12 +56,22 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		velocity.y = 3
-	
-	if Input.is_action_pressed("Move_Left"):
-		velocity.x -= speed
-	if Input.is_action_pressed("Move_Right"):
+
+	if !OneButton:
+		if Input.is_action_pressed("Move_Left"):
+			velocity.x -= speed
+		if Input.is_action_pressed("Move_Right"):
+			velocity.x += speed
+		if velocity.x > maxSpeed:
+			velocity.x = maxSpeed
+		if velocity.x < -maxSpeed:
+			velocity.x = -maxSpeed
+	else:
 		velocity.x += speed
-		
+		if velocity.x > maxSpeed:
+			velocity.x = maxSpeed
+
+	
 	if is_on_floor():
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
@@ -74,7 +86,7 @@ func _physics_process(delta: float) -> void:
 			coyoteTime.start()
 			coyoteOn = true
 		
-	if Input.is_action_just_pressed("Move_Up") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+	if Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
 		jumpSound.play_random()
 		velocity.y = -jump_speed * 2
 		coyoteTime.stop()

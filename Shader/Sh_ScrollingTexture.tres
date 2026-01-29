@@ -15,7 +15,7 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_o8nva"]
 output_port_for_preview = 0
-parameter_name = "BackgroundColorParameter"
+parameter_name = "BackgroundRoadColorParameter"
 qualifier = 1
 default_value_enabled = true
 

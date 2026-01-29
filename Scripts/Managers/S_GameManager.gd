@@ -4,7 +4,6 @@ static var instance : S_GameManager
 
 @export var scene : Array[PackedScene]
 
-
 var current_index : int = 0
 var current_scene : Node
 	
