@@ -104,11 +104,11 @@ renderer/rendering_method.mobile="gl_compatibility"
 
 PlayerColorParameter={
 "type": "color",
-"value": Color(0.009343989, 0.008430045, 0.06381294, 1)
+"value": Color(1, 1, 1, 1)
 }
 EnnemyColorParameter={
 "type": "color",
-"value": Color(1, 1, 1, 1)
+"value": Color(1, 0.8, 0.4627451, 1)
 }
 BackgroundColorParameter={
 "type": "color",
