@@ -15,9 +15,12 @@ signal hp_changed()
 @onready var soundGround = $SonsCollisionSol
 @onready var coyoteTime = $CoyoteTimer
 @onready var timer = $Timer
+@onready var Refreshtimer = $RefreshPos
 var coyoteOn: bool = false
 @onready var jumpSound = $SonSaut
 @export var respawnpoint : Node2D
+static var easyRespawn: bool = false
+var localRespawn: Vector2
 
 #Variables communes
 static var life: int = 3
@@ -76,10 +79,16 @@ func _physics_process(delta: float) -> void:
 
 	
 	if is_on_floor():
+		if(Refreshtimer.is_stopped()):
+			Refreshtimer.start()
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
 			soundGround.play_random()
 			
+			
+	if !is_on_floor():
+		Refreshtimer.stop()
+		
 		if coyoteOn:
 			coyoteOn = false
 			coyoteTime.stop()
@@ -90,12 +99,14 @@ func _physics_process(delta: float) -> void:
 			coyoteOn = true
 	if !OneButton:
 		if Input.is_action_just_pressed("Action") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			localRespawn = position
 			jumpSound.play_random()
 			velocity.y = -jump_speed * 2
 			coyoteTime.stop()
 			coyoteOn = true
 	else:
 		if Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			localRespawn = position
 			jumpSound.play_random()
 			velocity.y = -jump_speed * 2
 			coyoteTime.stop()
@@ -112,7 +123,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	position = respawnpoint.position
+	if(!easyRespawn):
+		position = respawnpoint.position
+	else:
+		position = localRespawn
 	life -= 1
 	hp_changed.emit()
 
@@ -125,3 +139,8 @@ func gameover():
 	GameSingletons.get_node("GameOverSound").play()
 	queue_free()
 	print("gameover")
+
+
+func on_refresh_timeout() -> void:
+	localRespawn = position
+	pass # Replace with function body.
