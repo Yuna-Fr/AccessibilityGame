@@ -228,7 +228,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
-scroll_vertical = 213
+scroll_vertical = 585
 scroll_hint_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
@@ -631,6 +631,11 @@ layout_mode = 2
 value = 100.0
 tick_count = 10
 
+[node name="LowLifeSound" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=658106346]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+text = "LOW_LIFE_SOUND"
+
 [node name="CheckBox6" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=651614340]
 visible = false
 layout_mode = 2
@@ -669,3 +674,4 @@ text = "SAVE"
 [connection signal="value_changed" from="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/TxtScaleSpinBox" to="CenterContainer/TabContainer/ACCESSIBILITY" method="_on_txt_scale_spin_box_value_changed"]
 [connection signal="value_changed" from="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicSlider" to="CenterContainer/TabContainer/ACCESSIBILITY" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SfxSlider" to="CenterContainer/TabContainer/ACCESSIBILITY" method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/LowLifeSound" to="CenterContainer/TabContainer/ACCESSIBILITY" method="_on_low_life_sound_toggled"]

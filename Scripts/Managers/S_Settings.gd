@@ -36,6 +36,8 @@ extends MarginContainer
 
 #endregion
 
+@export var low_life_mode = false
+
 
 func _ready():
 	reset_colors_to_default()
@@ -142,3 +144,6 @@ func _on_music_slider_value_changed(value: float) -> void:
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	change_volume("SFX", value)
+
+func _on_low_life_sound_toggled(toggled_on: bool) -> void:
+	low_life_mode = toggled_on
