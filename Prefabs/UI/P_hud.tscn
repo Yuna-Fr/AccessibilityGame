@@ -8,10 +8,9 @@ font_size = 42
 [sub_resource type="LabelSettings" id="LabelSettings_2sfmh"]
 font_size = 42
 
-[node name="MajorTom" type="CanvasLayer" unique_id=1170800278 node_paths=PackedStringArray("LifeLabel", "LifeBar", "TimerLabel")]
+[node name="MajorTom" type="CanvasLayer" unique_id=1170800278 node_paths=PackedStringArray("LifeLabel", "TimerLabel")]
 script = ExtResource("1_dtkup")
 LifeLabel = NodePath("Control/MarginContainer/Label")
-LifeBar = NodePath("")
 TimerLabel = NodePath("Control/MarginContainer2/Label")
 
 [node name="Control" type="Control" parent="." unique_id=278617624]
@@ -63,3 +62,8 @@ layout_mode = 2
 text = "TIMER : "
 label_settings = SubResource("LabelSettings_2sfmh")
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1313522960]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

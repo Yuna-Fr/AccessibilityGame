@@ -60,6 +60,12 @@ pitch_scale = 1.2
 autoplay = true
 bus = &"SFX"
 
+[node name="Timer2" type="Timer" parent="." unique_id=1453350236]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="engineAudio" to="." method="_on_engine_audio_finished"]
+[connection signal="timeout" from="Timer2" to="." method="end_of_level_timeout"]
