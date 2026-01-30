@@ -87,13 +87,19 @@ func _physics_process(delta: float) -> void:
 		if !coyoteOn:
 			coyoteTime.start()
 			coyoteOn = true
-		
-	if (Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down")) and ( !coyoteTime.is_stopped() or is_on_floor() ):
-		jumpSound.play_random()
-		velocity.y = -jump_speed * 2
-		coyoteTime.stop()
-		coyoteOn = true
-		
+	if !OneButton:
+		if Input.is_action_just_pressed("Action") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			jumpSound.play_random()
+			velocity.y = -jump_speed * 2
+			coyoteTime.stop()
+			coyoteOn = true
+	else:
+		if Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			jumpSound.play_random()
+			velocity.y = -jump_speed * 2
+			coyoteTime.stop()
+			coyoteOn = true
+			
 	if velocity.x > 0:
 		velocity.x -= friction	
 	elif velocity.x < 0:
