@@ -15,21 +15,12 @@ extends MarginContainer
 @export var default_forest : Color
 @export var default_road : Color
 @export var default_sea : Color
-@export var default_bullet : Color
-@export var default_enemy : Color
 @export var default_platformer : Color
-@export var default_player : Color
 
 @export_group("Daltonism aka Maxime Mode")
-@export var daltonism_mode : CheckBox
-@export var d_bg : Color
-@export var d_forest : Color
-@export var d_road : Color
-@export var d_sea : Color
-@export var d_bullet : Color
-@export var d_enemy : Color
-@export var d_platformer : Color
-@export var d_player : Color
+@export var d_player : ColorPickerButton
+@export var d_bullet : ColorPickerButton
+@export var d_enemy : ColorPickerButton
 
 @export_group("Contrast Mode")
 @export var contrast_mode : CheckBox
@@ -37,10 +28,7 @@ extends MarginContainer
 @export var co_forest : Color
 @export var co_road : Color
 @export var co_sea : Color
-@export var co_bullet : Color
-@export var co_enemy : Color
 @export var co_platformer : Color
-@export var co_player : Color
 
 #endregion
 
@@ -52,7 +40,9 @@ func _ready():
 	s_one_button.toggled.connect(s_toggle_one_button)
 	p_one_button.toggled.connect(p_toggle_one_button)
 	
-	daltonism_mode.toggled.connect(toggle_daltonism_mode)
+	d_player.color_changed.connect(player_color)
+	d_bullet.color_changed.connect(bullet_color)
+	d_enemy.color_changed.connect(enemy_color)
 	contrast_mode.toggled.connect(toggle_contrast_mode)
 
 #region Shooter
@@ -74,20 +64,16 @@ func p_toggle_one_button(toggled : bool):
 #endregion
 
 #region Color Modes
-func toggle_daltonism_mode(toggled : bool):
-	if !toggled :
-		reset_colors_to_default()
-		return
-	
-	RenderingServer.global_shader_parameter_set("BackgroundColorParameter", d_bg)
-	RenderingServer.global_shader_parameter_set("BackgroundForestColorParameter", d_forest)
-	RenderingServer.global_shader_parameter_set("BackgroundRoadColorParameter", d_road)
-	RenderingServer.global_shader_parameter_set("BackgroundSeaColorParameter", d_sea)
-	RenderingServer.global_shader_parameter_set("BulletColorParameter", d_bullet)
-	RenderingServer.global_shader_parameter_set("EnnemyColorParameter", d_enemy)
-	RenderingServer.global_shader_parameter_set("LevelPlatformerColorParameter", d_platformer)
-	RenderingServer.global_shader_parameter_set("PlayerColorParameter", d_player)
-	
+
+func player_color(color: Color):
+	RenderingServer.global_shader_parameter_set("PlayerColorParameter", color)
+
+func bullet_color(color: Color):
+	RenderingServer.global_shader_parameter_set("BulletColorParameter", color)
+
+func enemy_color(color: Color):
+	RenderingServer.global_shader_parameter_set("EnnemyColorParameter", color)
+
 func toggle_contrast_mode(toggled : bool):
 	if !toggled :
 		reset_colors_to_default()
@@ -97,18 +83,12 @@ func toggle_contrast_mode(toggled : bool):
 	RenderingServer.global_shader_parameter_set("BackgroundForestColorParameter", co_forest)
 	RenderingServer.global_shader_parameter_set("BackgroundRoadColorParameter", co_road)
 	RenderingServer.global_shader_parameter_set("BackgroundSeaColorParameter", co_sea)
-	RenderingServer.global_shader_parameter_set("BulletColorParameter", co_bullet)
-	RenderingServer.global_shader_parameter_set("EnnemyColorParameter", co_enemy)
 	RenderingServer.global_shader_parameter_set("LevelPlatformerColorParameter", co_platformer)
-	RenderingServer.global_shader_parameter_set("PlayerColorParameter", co_player)
 
 func reset_colors_to_default():
 	RenderingServer.global_shader_parameter_set("BackgroundColorParameter", default_bg)
 	RenderingServer.global_shader_parameter_set("BackgroundForestColorParameter", default_forest)
 	RenderingServer.global_shader_parameter_set("BackgroundRoadColorParameter", default_road)
 	RenderingServer.global_shader_parameter_set("BackgroundSeaColorParameter", default_sea)
-	RenderingServer.global_shader_parameter_set("BulletColorParameter", default_bullet)
-	RenderingServer.global_shader_parameter_set("EnnemyColorParameter", default_enemy)
 	RenderingServer.global_shader_parameter_set("LevelPlatformerColorParameter", default_platformer)
-	RenderingServer.global_shader_parameter_set("PlayerColorParameter", default_player)
 #endregion
