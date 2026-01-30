@@ -1,4 +1,4 @@
-extends TileMapLayer
+class_name A11yBlocks extends TileMapLayer
 
 static var AccessibilityBlocks: bool = false
 

@@ -185,7 +185,7 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "p_helper", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -199,6 +199,7 @@ hard = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBo
 c_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer/CheckBox")
 s_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/CheckBox")
 p_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox")
+p_helper = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox2")
 default_bg = Color(0.17254902, 0.9137255, 1, 1)
 default_forest = Color(0, 0.972549, 0.78431374, 1)
 default_road = Color(1, 0.5921569, 0.3647059, 1)
@@ -228,7 +229,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
-scroll_vertical = 585
+scroll_vertical = 100
 scroll_hint_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
@@ -468,10 +469,9 @@ rounded = true
 tick_count = 4
 
 [node name="CheckBox2" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=930533303]
-visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
-text = "SNAPPING"
+text = "HELPER_BLOCKS"
 
 [node name="CheckBox3" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer" unique_id=1083649286]
 visible = false

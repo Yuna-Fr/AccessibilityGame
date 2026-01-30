@@ -12,6 +12,7 @@ extends MarginContainer
 
 @export_group("Platformer")
 @export var p_one_button : CheckBox
+@export var p_helper : CheckBox
 
 #region Color Modes
 @export_group("Default Colors")
@@ -50,11 +51,13 @@ func _ready():
 	c_one_button.toggled.connect(c_toggle_one_button)
 	s_one_button.toggled.connect(s_toggle_one_button)
 	p_one_button.toggled.connect(p_toggle_one_button)
+	p_helper.toggled.connect(p_toggle_helper_blocks)
 	
 	d_player.color_changed.connect(player_color)
 	d_bullet.color_changed.connect(bullet_color)
 	d_enemy.color_changed.connect(enemy_color)
 	contrast_mode.toggled.connect(toggle_contrast_mode)
+	
 
 func difficulty_easy(): 
 	CarController.lives = 10
@@ -91,7 +94,7 @@ func difficulty_hard():
 	if node is HUD:
 		node.on_hp_changed()
 
-#region Shooter
+#region Car
 func c_toggle_one_button(toggled : bool): 
 	CarController.OneButton = toggled
 
@@ -107,6 +110,8 @@ func s_toggle_one_button(toggled : bool):
 func p_toggle_one_button(toggled : bool): 
 	PlatformerController.OneButton = toggled
 
+func p_toggle_helper_blocks(toggled : bool): 
+	A11yBlocks.AccessibilityBlocks = toggled
 #endregion
 
 #region Color Modes
