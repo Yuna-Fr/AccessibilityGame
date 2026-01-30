@@ -185,7 +185,7 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "p_helper", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "s_shoot_rate", "p_one_button", "p_helper", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
 visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
@@ -199,6 +199,7 @@ normal = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/H
 hard = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Button3")
 c_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer/CheckBox")
 s_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/CheckBox")
+s_shoot_rate = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/HSlider3")
 p_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox")
 p_helper = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox2")
 default_bg = Color(0.17254902, 0.9137255, 1, 1)

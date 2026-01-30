@@ -51,7 +51,7 @@ func _ready():
 	
 	c_one_button.toggled.connect(c_toggle_one_button)
 	s_one_button.toggled.connect(s_toggle_one_button)
-	#s_shoot_rate.drag_ended.connect(s_drag_shoot_rate)
+	s_shoot_rate.value_changed.connect(s_drag_shoot_rate)
 	#s_time.drag_ended.connect(s_drag_time)
 	
 	p_one_button.toggled.connect(p_toggle_one_button)
