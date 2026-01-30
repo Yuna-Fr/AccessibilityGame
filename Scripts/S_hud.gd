@@ -32,11 +32,11 @@ func _ready() -> void:
 				IsPlatformer = true
 
 func _process(delta: float) -> void:
-	if(player && player is not PlatformerController):
+	if player && player is not PlatformerController:
 		var TimeFloor: int = int(round(player.leveltimer.time_left))
 		TimerLabel.text = "Time : " + str(TimeFloor)
 	
-	if player.deaths == CarController.lives - 1:
+	if player && player.deaths == CarController.lives - 1:
 		var access_menu = GameSingletons.get_node("MenuLayer/CenterContainer/TabContainer/ACCESSIBILITY")
 		if not lowLifeAudio.playing:
 			if access_menu.low_life_mode:
