@@ -2,13 +2,13 @@ class_name ShooterController extends CharacterBody2D
 
 @export var bullet_prefab : PackedScene
 @export var speed: float = 500.0
-@export var reload_time : float = 1
 
 signal hp_changed()
 
 static var lives: int = 3
 static var OneButton: bool = false
 static var LevelTime: float = 40
+static var reload_time : float = 1
 
 var deaths: int = 0
 var isdead: bool = false

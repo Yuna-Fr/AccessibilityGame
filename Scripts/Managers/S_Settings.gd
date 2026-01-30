@@ -9,6 +9,8 @@ extends MarginContainer
 
 @export_group("Shooter")
 @export var s_one_button : CheckBox
+@export var s_shoot_rate : HSlider
+#@export var s_time : HSlider
 
 @export_group("Platformer")
 @export var p_one_button : CheckBox
@@ -39,7 +41,6 @@ extends MarginContainer
 
 @export var low_life_mode = false
 
-
 func _ready():
 	reset_colors_to_default()
 	
@@ -50,6 +51,9 @@ func _ready():
 	
 	c_one_button.toggled.connect(c_toggle_one_button)
 	s_one_button.toggled.connect(s_toggle_one_button)
+	#s_shoot_rate.drag_ended.connect(s_drag_shoot_rate)
+	#s_time.drag_ended.connect(s_drag_time)
+	
 	p_one_button.toggled.connect(p_toggle_one_button)
 	p_helper.toggled.connect(p_toggle_helper_blocks)
 	
@@ -66,16 +70,14 @@ func difficulty_easy():
 	
 	Spawner.spawn_interval = 3.0
 	
-	
 	var node := get_tree().get_root().find_child("MajorTom", true, false)
 	if node is HUD:
 		node.on_hp_changed()
-	
+
 func difficulty_normal(): 
 	CarController.lives = 3
 	ShooterController.lives = 3
 	PlatformerController.lives = 3
-	#CarController.leveltime
 	
 	Spawner.spawn_interval = 2.0
 	
@@ -103,6 +105,12 @@ func c_toggle_one_button(toggled : bool):
 #region Shooter
 func s_toggle_one_button(toggled : bool): 
 	ShooterController.OneButton = toggled
+
+func s_drag_shoot_rate(value : float): 
+	ShooterController.reload_time = value
+
+func s_drag_time(value : float): 
+	ShooterController.LevelTime = value
 
 #endregion
 
@@ -155,7 +163,6 @@ func _on_txt_scale_spin_box_value_changed(value: float) -> void:
 func change_volume(bus:String, value:float):
 	var bus_index= AudioServer.get_bus_index(bus)
 	AudioServer.set_bus_volume_linear(bus_index, value/100) # value between 0 and 1 if divided by 100
-
 
 func _on_music_slider_value_changed(value: float) -> void:
 	change_volume("Music", value)

@@ -390,14 +390,15 @@ theme_override_constants/h_separation = 15
 text = "AUTO_SHOOT"
 
 [node name="Label3" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=732252879]
-visible = false
 layout_mode = 2
-text = "SHIP_BULLET_RATE : 1"
+text = "SHIP_BULLET_RATE :"
 
 [node name="HSlider3" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=288047161]
-visible = false
 layout_mode = 2
+min_value = 0.1
 max_value = 3.0
+step = 0.1
+value = 0.1
 rounded = true
 tick_count = 4
 
@@ -409,7 +410,10 @@ text = "ENEMY_LIFE : 1"
 [node name="HSlider4" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=953095407]
 visible = false
 layout_mode = 2
+min_value = 0.1
 max_value = 3.0
+step = 0.5
+value = 1.1
 rounded = true
 tick_count = 4
 
@@ -421,7 +425,8 @@ text = "TIME_TO_SURVIVE : 1"
 [node name="HSlider5" type="HSlider" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer" unique_id=1957139166]
 visible = false
 layout_mode = 2
-max_value = 3.0
+step = 5.0
+value = 40.0
 rounded = true
 tick_count = 4
 
