@@ -5,6 +5,7 @@ static var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
 static var OneButton: bool = false
+static var LevelTime: float = 40
 
 signal hp_changed()
 
@@ -12,8 +13,13 @@ signal hp_changed()
 @onready var MeshColor = $MeshInstance2D
 @onready var engineAudio = $engineAudio
 @onready var crashAudio = $crashAudio
+@onready var leveltimer = $Timer2
+
 
 func _ready():
+	leveltimer.stop()
+	leveltimer.wait_time = LevelTime
+	leveltimer.start()
 	pass
 
 func _physics_process(delta):
@@ -76,3 +82,8 @@ func _on_timer_timeout() -> void:
 
 func _on_engine_audio_finished() -> void:
 	engineAudio.play()
+
+
+func end_of_level_timeout() -> void:
+	GameManager.swapScene(GameManager.current_index +1)
+	pass # Replace with function body.
