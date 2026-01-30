@@ -129,6 +129,9 @@ func set_global_font_size(size: int) -> void:
 	var g_theme := ThemeDB.get_default_theme()
 	g_theme.set_default_font_size(size)
 
+func _on_txt_scale_spin_box_value_changed(value: float) -> void:
+	set_global_font_size(value)
+
 func change_volume(bus:String, value:float):
 	var bus_index= AudioServer.get_bus_index(bus)
 	AudioServer.set_bus_volume_linear(bus_index, value/100) # value between 0 and 1 if divided by 100
