@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byiohioj82k7v"]
+
+[ext_resource type="Material" uid="uid://b72bk3084ufaf" path="res://Shader/Materials/BackgroundMaterial.tres" id="1_lvhd7"]
+[ext_resource type="Script" uid="uid://cgsugrtt6m1ub" path="res://Scripts/S_access_tile_map.gd" id="2_axw6m"]
+
+[node name="AccessTileMap" type="TileMapLayer" unique_id=1872913918]
+material = ExtResource("1_lvhd7")
+script = ExtResource("2_axw6m")

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b72bk3084ufaf"]
 
-[ext_resource type="Shader" uid="uid://d28204bcav50j" path="res://Shader/ColorShader/BackgroundForestShader.tres" id="1_pujqo"]
+[ext_resource type="Shader" uid="uid://c56pxakl4egca" path="res://Shader/ColorShader/AccessTileShader.tres" id="1_pujqo"]
 
 [resource]
 shader = ExtResource("1_pujqo")

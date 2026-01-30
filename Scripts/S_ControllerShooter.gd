@@ -8,7 +8,7 @@ signal hp_changed()
 
 static var lives: int = 3
 static var OneButton: bool = false
-static var LevelTime: float = 5
+static var LevelTime: float = 40
 
 var deaths: int = 0
 var isdead: bool = false
