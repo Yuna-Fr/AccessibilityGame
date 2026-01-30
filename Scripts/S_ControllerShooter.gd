@@ -56,9 +56,9 @@ func _physics_process(delta):
 		if can_shoot: _shoot()
 
 	var direction = Vector2(direction_x, direction_y).normalized()
-	velocity = direction * speed
+	#velocity = direction * speed
 
-	velocity = direction.normalized() * speed
+	velocity = lerp(velocity, direction.normalized() * speed, 0.1)
 	move_and_slide()
 
 	# Clamp position to screen
