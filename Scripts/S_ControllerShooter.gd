@@ -4,9 +4,12 @@ class_name ShooterController extends CharacterBody2D
 @export var speed: float = 500.0
 @export var reload_time : float = 1
 
+signal hp_changed()
+
 #Variables communes
-@export var life: int = 3
+static var life: int = 3
 static var OneButton: bool = false
+static var LevelTime: float = 5
 var isdead: bool = false
 var canDie: bool = true
 #
@@ -14,9 +17,15 @@ var canDie: bool = true
 @onready var MeshColor = $MeshInstance2D
 @onready var shootAudio = $fireAudio
 @onready var engineAudio = $engineAudio
+@onready var leveltimer = $Timer2
 
 var auto_shoot: bool = false
 var can_shoot := true
+
+func _ready():
+	leveltimer.stop()
+	leveltimer.wait_time = LevelTime
+	leveltimer.start()
 
 func _physics_process(delta):
 	if life==0 && canDie: 
@@ -70,6 +79,7 @@ func _shoot():
 func die():
 	if(isdead == false):
 		life -= 1
+		hp_changed.emit()
 	isdead = true
 	timer.start()
 	print("life : ", life)
@@ -99,3 +109,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_engine_audio_finished() -> void:
 	engineAudio.play()
+
+
+func end_of_level_timeout() -> void:
+	GameManager.swapScene(GameManager.current_index +1)
+	pass # Replace with function body.

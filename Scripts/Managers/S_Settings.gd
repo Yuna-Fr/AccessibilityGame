@@ -1,5 +1,9 @@
 extends MarginContainer
 
+@export var easy : Button
+@export var normal : Button
+@export var hard : Button
+
 @export_group("Car")
 @export var c_one_button : CheckBox
 
@@ -36,6 +40,10 @@ func _ready():
 	reset_colors_to_default()
 	
 	# Buttons connection
+	easy.pressed.connect(difficulty_easy)
+	normal.pressed.connect(difficulty_normal)
+	easy.pressed.connect(difficulty_hard)
+	
 	c_one_button.toggled.connect(c_toggle_one_button)
 	s_one_button.toggled.connect(s_toggle_one_button)
 	p_one_button.toggled.connect(p_toggle_one_button)
@@ -44,6 +52,28 @@ func _ready():
 	d_bullet.color_changed.connect(bullet_color)
 	d_enemy.color_changed.connect(enemy_color)
 	contrast_mode.toggled.connect(toggle_contrast_mode)
+
+func difficulty_easy(): 
+	CarController.life = 10
+	ShooterController.life = 10
+	PlatformerController.life = 10
+	
+	Spawner.spawn_interval = 3.0
+
+func difficulty_normal(): 
+	CarController.life = 3
+	ShooterController.life = 3
+	PlatformerController.life = 3
+	#CarController.leveltime
+	
+	Spawner.spawn_interval = 2.0
+
+func difficulty_hard(): 
+	CarController.life = 1
+	ShooterController.life = 1
+	PlatformerController.life = 1
+	
+	Spawner.spawn_interval = 1.0
 
 #region Shooter
 func c_toggle_one_button(toggled : bool): 

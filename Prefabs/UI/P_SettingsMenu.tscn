@@ -169,7 +169,7 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("c_one_button", "s_one_button", "p_one_button", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -177,6 +177,9 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 script = ExtResource("4_166xi")
+easy = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Button")
+normal = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Button2")
+hard = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3/Button3")
 c_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer/CheckBox")
 s_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/CheckBox")
 p_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox")
@@ -209,7 +212,6 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
-scroll_vertical = 182
 scroll_hint_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer" unique_id=33677719]
@@ -224,12 +226,10 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
 [node name="Label6" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=907657160]
-visible = false
 layout_mode = 2
 text = "GAMEPLAY"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=360411686]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 15
 
@@ -247,6 +247,9 @@ text = "MEDIUM"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "HARD"
+
+[node name="offset" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=917852971]
+layout_mode = 2
 
 [node name="RacingFoldableContainer" type="FoldableContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1734365370]
 layout_mode = 2
@@ -473,13 +476,11 @@ edit_alpha = false
 edit_intensity = false
 
 [node name="Label" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380909605]
-visible = false
 layout_mode = 2
 text = "
 TEXT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=489001527]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
@@ -497,7 +498,6 @@ layout_mode = 2
 text = "TEXT_SCALE"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=655627762]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15

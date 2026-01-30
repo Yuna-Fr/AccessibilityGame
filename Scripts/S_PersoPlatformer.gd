@@ -9,7 +9,7 @@ class_name PlatformerController extends CharacterBody2D
 @export var air_friction : float = 5
 var canDie: bool = true
 
-static var OneButton: bool = false
+signal hp_changed()
 
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
@@ -20,7 +20,8 @@ var coyoteOn: bool = false
 @export var respawnpoint : Node2D
 
 #Variables communes
-@export var life: int = 3
+static var life: int = 3
+static var OneButton: bool = false
 
 var original_pos_x
 var new_pos_x
@@ -87,13 +88,19 @@ func _physics_process(delta: float) -> void:
 		if !coyoteOn:
 			coyoteTime.start()
 			coyoteOn = true
-		
-	if (Input.is_action_just_pressed("Action") or Input.is_action_just_pressed("Move_Down")) and ( !coyoteTime.is_stopped() or is_on_floor() ):
-		jumpSound.play_random()
-		velocity.y = -jump_speed * 2
-		coyoteTime.stop()
-		coyoteOn = true
-		
+	if !OneButton:
+		if Input.is_action_just_pressed("Action") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			jumpSound.play_random()
+			velocity.y = -jump_speed * 2
+			coyoteTime.stop()
+			coyoteOn = true
+	else:
+		if Input.is_action_just_pressed("Move_Down") and ( !coyoteTime.is_stopped() or is_on_floor() ):
+			jumpSound.play_random()
+			velocity.y = -jump_speed * 2
+			coyoteTime.stop()
+			coyoteOn = true
+			
 	if velocity.x > 0:
 		velocity.x -= friction	
 	elif velocity.x < 0:
@@ -107,6 +114,8 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	position = respawnpoint.position
 	life -= 1
+	hp_changed.emit()
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	timer.start()
