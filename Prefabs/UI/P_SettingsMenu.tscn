@@ -185,13 +185,14 @@ default_forest = Color(0, 0.972549, 0.78431374, 1)
 default_road = Color(1, 0.5921569, 0.3647059, 1)
 default_sea = Color(0.17254902, 0.9137255, 1, 1)
 default_platformer = Color(0.9882353, 0.9372549, 0.72156864, 1)
-d_player = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton3")
-d_bullet = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton4")
-d_enemy = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton2")
+d_player = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4/ColorPickerButton3")
+d_bullet = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5/ColorPickerButton4")
+d_enemy = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/ColorPickerButton2")
 contrast_mode = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckBox5")
-co_forest = Color(0.01992562, 0.01992564, 0.019925622, 1)
-co_road = Color(0.01702068, 0.017020682, 0.01702067, 1)
-co_sea = Color(0.0010853444, 0.0010853447, 0.0010853439, 1)
+co_bg = Color(0.039399665, 0.22238266, 0.2666424, 1)
+co_forest = Color(0.1273287, 0.31768802, 0.26441357, 1)
+co_road = Color(0.46852952, 0.2729214, 0.23229161, 1)
+co_sea = Color(0.016253376, 0.15471548, 0.19552559, 1)
 co_platformer = Color(0, 0.81449157, 0.42685428, 1)
 metadata/_tab_index = 1
 
@@ -536,53 +537,53 @@ layout_mode = 2
 text = "
 VISIBILITY"
 
-[node name="ColorPickerButton3" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=838481324]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=82765701]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "COLOR"
-color = Color(1, 1, 1, 1)
-edit_alpha = false
-edit_intensity = false
 
-[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton3" unique_id=1381905789]
-layout_mode = 0
-offset_left = -313.99994
-offset_top = 3.0000153
-offset_right = -128.0
-offset_bottom = 28.735
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1381905789]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "PLAYER_COLOR"
 
-[node name="ColorPickerButton4" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1726411167]
+[node name="ColorPickerButton3" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=838481324]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 text = "COLOR"
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 edit_intensity = false
 
-[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton4" unique_id=1092559595]
-layout_mode = 0
-offset_left = -313.99994
-offset_top = 3.0000153
-offset_right = -128.0
-offset_bottom = 28.735
+[node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1959065315]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1092559595]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "BULLET_COLOR"
 
-[node name="ColorPickerButton2" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1944160114]
+[node name="ColorPickerButton4" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1726411167]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
+text = "COLOR"
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1149138673]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1506387504]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ENEMY_COLOR"
+
+[node name="ColorPickerButton2" type="ColorPickerButton" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1944160114]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "COLOR"
 color = Color(1, 0.8, 0.4627451, 1)
 edit_alpha = false
 edit_intensity = false
-
-[node name="Label2" type="Label" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorPickerButton2" unique_id=1506387504]
-layout_mode = 0
-offset_left = -313.99994
-offset_top = 3.0000153
-offset_right = -128.0
-offset_bottom = 28.735
-text = "ENEMY_COLOR"
 
 [node name="CheckBox5" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=75751518]
 layout_mode = 2
