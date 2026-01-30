@@ -92,3 +92,8 @@ func reset_colors_to_default():
 	RenderingServer.global_shader_parameter_set("BackgroundSeaColorParameter", default_sea)
 	RenderingServer.global_shader_parameter_set("LevelPlatformerColorParameter", default_platformer)
 #endregion
+
+
+func set_global_font_size(size: int) -> void:
+	var theme := ThemeDB.get_default_theme()
+	theme.set_default_font_size(size)
