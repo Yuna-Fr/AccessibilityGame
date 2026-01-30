@@ -36,6 +36,7 @@ extends MarginContainer
 
 #endregion
 
+
 func _ready():
 	reset_colors_to_default()
 	
@@ -127,3 +128,14 @@ func reset_colors_to_default():
 func set_global_font_size(size: int) -> void:
 	var g_theme := ThemeDB.get_default_theme()
 	g_theme.set_default_font_size(size)
+
+func change_volume(bus:String, value:float):
+	var bus_index= AudioServer.get_bus_index(bus)
+	AudioServer.set_bus_volume_linear(bus_index, value/100) # value between 0 and 1 if divided by 100
+
+
+func _on_music_slider_value_changed(value: float) -> void:
+	change_volume("Music", value)
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	change_volume("SFX", value)
