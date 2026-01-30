@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://f51qm3ejnsnl" path="res://Scripts/Managers/S_InputManager.gd" id="1_aofda"]
 [ext_resource type="Shader" uid="uid://yu476qmxdqi2" path="res://Prefabs/UI/P_SettingsMenuShader.gdshader" id="2_5yof3"]
 [ext_resource type="Script" uid="uid://ba7omf5q6j16e" path="res://Scripts/Managers/S_Settings.gd" id="4_166xi"]
+[ext_resource type="Texture2D" uid="uid://ct20hp3psba20" path="res://Textures/UI_Cross.png" id="5_csti5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_166xi"]
 shader = ExtResource("2_5yof3")
@@ -25,6 +26,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ExitButton" type="TextureButton" parent="." unique_id=21992022]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -236.0
+offset_right = -262.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_csti5")
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2110654042]
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="TabContainer" type="TabContainer" parent="CenterContainer" unique_id=796310891]
 layout_mode = 2
@@ -651,3 +667,5 @@ text = "CANCEL"
 layout_mode = 2
 size_flags_horizontal = 8
 text = "SAVE"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
