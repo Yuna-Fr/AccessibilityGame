@@ -14,9 +14,10 @@ shader_parameter/mix_percentage = 0.50000002375
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yof3"]
 bg_color = Color(0.86, 0.5016667, 0, 0.5882353)
 
-[node name="MenuLayer" type="CanvasLayer" unique_id=634841517]
+[node name="MenuLayer" type="CanvasLayer" unique_id=634841517 node_paths=PackedStringArray("firstFocusControl")]
 process_mode = 3
 script = ExtResource("1_6sgrq")
+firstFocusControl = NodePath("CenterContainer/TabContainer/INPUTS/CenterContainer/HBoxContainer/VKeyboard/Button_Up")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1024405026]
 material = SubResource("ShaderMaterial_166xi")
@@ -53,10 +54,9 @@ mouse_filter = 2
 [node name="TabContainer" type="TabContainer" parent="CenterContainer" unique_id=796310891]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5yof3")
-current_tab = 1
+current_tab = 0
 
 [node name="INPUTS" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=496747328 node_paths=PackedStringArray("move_up_btn", "move_down_btn", "move_left_btn", "move_right_btn", "action_btn", "move_up_gamepad", "move_down_gamepad", "move_left_gamepad", "move_right_gamepad", "action_gamepad", "reset_btn")]
-visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -185,7 +185,8 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "p_helper", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("easy", "normal", "hard", "c_one_button", "s_one_button", "p_one_button", "d_player", "d_bullet", "d_enemy", "contrast_mode")]
+visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50

@@ -44,7 +44,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("Move_Down"): direction += 1
 
 
-	velocity.y = direction * speed
+	velocity.y = lerp(velocity.y, direction * speed, 0.1)
 	move_and_slide()
 
 	# Clamp Y position to screen
