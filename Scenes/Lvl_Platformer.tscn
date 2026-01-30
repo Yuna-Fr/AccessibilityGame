@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cnbkxkqpvm0o5" path="res://Textures/Mountains/Background_Forest_Arbres.png" id="8_eribn"]
 [ext_resource type="Shader" uid="uid://cp2gtvfuokhro" path="res://Shader/ColorShader/TileShader.tres" id="10_kpbdu"]
 [ext_resource type="PackedScene" uid="uid://ciyofkvy5ljlf" path="res://Prefabs/UI/P_hud.tscn" id="12_eribn"]
+[ext_resource type="PackedScene" uid="uid://6ac0en1f0gtf" path="res://Prefabs/P_Flag.tscn" id="13_hvx77"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eribn"]
 shader = ExtResource("1_q70wk")
@@ -114,5 +115,9 @@ shape = SubResource("RectangleShape2D_ocwxl")
 
 [node name="MajorTom" parent="." unique_id=1170800278 node_paths=PackedStringArray("player") instance=ExtResource("12_eribn")]
 player = NodePath("../CharacterBody2D")
+
+[node name="P_Flag" parent="." unique_id=1922580343 instance=ExtResource("13_hvx77")]
+position = Vector2(8319, 236)
+scale = Vector2(0.4569194, 0.4569194)
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]

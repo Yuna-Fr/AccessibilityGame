@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://6ac0en1f0gtf"]
+
+[ext_resource type="Texture2D" uid="uid://g064n66tsk40" path="res://Textures/Flag.png" id="1_bttu4"]
+[ext_resource type="Script" uid="uid://cbh4mp1rxeclk" path="res://Scripts/S_EndOfLevel.gd" id="2_2rri7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iisl"]
+size = Vector2(286.5, 485)
+
+[node name="P_Flag" type="Node2D" unique_id=1922580343]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540010851]
+texture = ExtResource("1_bttu4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=415144226]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1055138648]
+position = Vector2(-0.25, 8)
+shape = SubResource("RectangleShape2D_1iisl")
+script = ExtResource("2_2rri7")
+
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
