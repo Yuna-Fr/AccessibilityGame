@@ -15,7 +15,7 @@ size = Vector2(36, 20)
 [node name="Bullet" type="Area2D" unique_id=886213767]
 collision_mask = 4
 script = ExtResource("1_hlsg0")
-speed = 1000.0
+speed = 1800.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1382922189]
 material = SubResource("ShaderMaterial_axkmt")
