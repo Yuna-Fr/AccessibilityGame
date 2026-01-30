@@ -11,8 +11,6 @@ var canDie: bool = true
 
 signal hp_changed()
 
-static var OneButton: bool = false
-
 @onready var cam = $Camera2D
 @onready var soundGround = $SonsCollisionSol
 @onready var coyoteTime = $CoyoteTimer
@@ -22,7 +20,8 @@ var coyoteOn: bool = false
 @export var respawnpoint : Node2D
 
 #Variables communes
-@export var life: int = 3
+static var life: int = 3
+static var OneButton: bool = false
 
 var original_pos_x
 var new_pos_x

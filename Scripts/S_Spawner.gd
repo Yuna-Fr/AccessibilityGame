@@ -1,8 +1,8 @@
-extends Node2D
+class_name Spawner extends Node2D
 
+static var spawn_interval := 2.0
 
 #@export var prefab: PackedScene
-@export var spawn_interval := 2.0
 @export var spawn_x := 1200.0 # hors écran à droite (exemple)
 @export var SpawnLife : int
 

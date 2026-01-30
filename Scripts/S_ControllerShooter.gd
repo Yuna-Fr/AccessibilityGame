@@ -7,7 +7,7 @@ class_name ShooterController extends CharacterBody2D
 signal hp_changed()
 
 #Variables communes
-@export var life: int = 3
+static var life: int = 3
 static var OneButton: bool = false
 static var LevelTime: float = 5
 var isdead: bool = false
