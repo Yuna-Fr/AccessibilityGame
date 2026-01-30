@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://n6oo2f5xry8s"]
+
+[ext_resource type="Texture2D" uid="uid://bbqrti831ilef" path="res://Textures/FondMenuPrincipal.png" id="1_7sp8y"]
+[ext_resource type="Script" uid="uid://jjtn871ackkp" path="res://Scripts/S_Main_menu.gd" id="1_f7j37"]
+[ext_resource type="PackedScene" uid="uid://ddlfwk1da0blt" path="res://Scenes/Lvl_Circuit.tscn" id="2_787fc"]
+[ext_resource type="Texture2D" uid="uid://v7uvhos8p1th" path="res://Textures/TitreJeu.png" id="2_pc006"]
+[ext_resource type="Texture2D" uid="uid://chd7bt6ua62kw" path="res://Textures/Obstacle Sea/UFO_Bullet_FX.png" id="5_ihofj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xwboo"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+angular_velocity_min = -360.0
+angular_velocity_max = 359.99997
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -387.1
+radial_velocity_max = 290.31998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+
+[node name="MainMenu" type="Control" unique_id=2044436619]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f7j37")
+first_level = ExtResource("2_787fc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1580893187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7sp8y")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=928622252]
+modulate = Color(0.61, 0.61, 0.61, 0.03529412)
+position = Vector2(999, 665)
+amount = 300
+texture = ExtResource("5_ihofj")
+lifetime = 7.0
+randomness = 1.0
+fixed_fps = 144
+process_material = SubResource("ParticleProcessMaterial_xwboo")
+
+[node name="Title" type="TextureRect" parent="." unique_id=1446664209]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 82.0
+offset_right = 736.0
+offset_bottom = 479.0
+grow_horizontal = 2
+texture = ExtResource("2_pc006")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1785152317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_right = 243.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=167821710]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=48591846]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=730877259]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
