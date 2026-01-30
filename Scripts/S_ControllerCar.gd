@@ -1,10 +1,12 @@
 class_name CarController extends CharacterBody2D
 
 @export var speed: float = 500.0
-@export var life: int = 3
+static var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
 static var OneButton: bool = false
+
+signal hp_changed()
 
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
@@ -48,6 +50,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func die():
 	if(isdead == false):
 		life -= 1
+		hp_changed.emit()
 	isdead = true
 	timer.start()
 	print("life : ", life)

@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dy3uv8wc2bwr7" path="res://Textures/Mountains/Background_Forest_MontagneBG2.png" id="7_kpbdu"]
 [ext_resource type="Texture2D" uid="uid://cnbkxkqpvm0o5" path="res://Textures/Mountains/Background_Forest_Arbres.png" id="8_eribn"]
 [ext_resource type="Shader" uid="uid://cp2gtvfuokhro" path="res://Shader/ColorShader/TileShader.tres" id="10_kpbdu"]
+[ext_resource type="PackedScene" uid="uid://ciyofkvy5ljlf" path="res://Prefabs/UI/P_hud.tscn" id="12_eribn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eribn"]
 shader = ExtResource("1_q70wk")
@@ -110,5 +111,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=243601493]
 position = Vector2(3624.46, -10.5)
 shape = SubResource("RectangleShape2D_ocwxl")
+
+[node name="MajorTom" parent="." unique_id=1170800278 node_paths=PackedStringArray("player") instance=ExtResource("12_eribn")]
+player = NodePath("../CharacterBody2D")
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]

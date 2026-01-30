@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://ciyofkvy5ljlf"]
 
+[ext_resource type="Script" uid="uid://bilug54wfj7ip" path="res://Scripts/S_hud.gd" id="1_dtkup"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_dtkup"]
 font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_2sfmh"]
 font_size = 42
 
-[node name="MajorTom" type="CanvasLayer" unique_id=1170800278]
+[node name="MajorTom" type="CanvasLayer" unique_id=1170800278 node_paths=PackedStringArray("LifeLabel", "LifeBar", "TimerLabel")]
+script = ExtResource("1_dtkup")
+LifeLabel = NodePath("Control/MarginContainer/Label")
+LifeBar = NodePath("")
+TimerLabel = NodePath("Control/MarginContainer2/Label")
 
 [node name="Control" type="Control" parent="." unique_id=278617624]
 layout_mode = 3
@@ -27,18 +33,8 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 color = Color(0, 0, 0, 0.25490198)
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/MarginContainer" unique_id=1711472404]
+[node name="Label" type="Label" parent="Control/MarginContainer" unique_id=1523743957]
 layout_mode = 2
-size_flags_vertical = 1
-max_value = 5.0
-value = 5.0
-rounded = true
-show_percentage = false
-
-[node name="Label" type="Label" parent="Control/MarginContainer/ProgressBar" unique_id=1523743957]
-layout_mode = 0
-offset_right = 624.0
-offset_bottom = 59.0
 text = "LIFE : "
 label_settings = SubResource("LabelSettings_dtkup")
 horizontal_alignment = 1
@@ -58,12 +54,12 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer2" unique_id=198650540]
+layout_mode = 2
+color = Color(0, 0, 0, 0.25490198)
+
 [node name="Label" type="Label" parent="Control/MarginContainer2" unique_id=1708990193]
 layout_mode = 2
 text = "TIMER : "
 label_settings = SubResource("LabelSettings_2sfmh")
 horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer2" unique_id=198650540]
-layout_mode = 2
-color = Color(0, 0, 0, 0.25490198)

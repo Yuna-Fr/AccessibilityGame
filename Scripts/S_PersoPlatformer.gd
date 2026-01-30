@@ -9,6 +9,8 @@ class_name PlatformerController extends CharacterBody2D
 @export var air_friction : float = 5
 var canDie: bool = true
 
+signal hp_changed()
+
 static var OneButton: bool = false
 
 @onready var cam = $Camera2D
@@ -107,6 +109,8 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	position = respawnpoint.position
 	life -= 1
+	hp_changed.emit()
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	timer.start()

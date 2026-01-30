@@ -4,6 +4,8 @@ class_name ShooterController extends CharacterBody2D
 @export var speed: float = 500.0
 @export var reload_time : float = 1
 
+signal hp_changed()
+
 #Variables communes
 @export var life: int = 3
 static var OneButton: bool = false
@@ -70,6 +72,7 @@ func _shoot():
 func die():
 	if(isdead == false):
 		life -= 1
+		hp_changed.emit()
 	isdead = true
 	timer.start()
 	print("life : ", life)
