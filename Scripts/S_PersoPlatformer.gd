@@ -85,14 +85,13 @@ func _physics_process(delta: float) -> void:
 		if not toggle_ground:
 			toggle_ground = !toggle_ground
 			soundGround.play_random()
-			
-			
-	if !is_on_floor():
-		Refreshtimer.stop()
-		
 		if coyoteOn:
 			coyoteOn = false
 			coyoteTime.stop()
+
+			
+	if !is_on_floor():
+		Refreshtimer.stop()
 		
 	else:
 		if !coyoteOn:
