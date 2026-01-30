@@ -6,13 +6,14 @@ class_name ShooterController extends CharacterBody2D
 
 signal hp_changed()
 
-#Variables communes
-static var life: int = 3
+static var lives: int = 3
 static var OneButton: bool = false
 static var LevelTime: float = 5
+
+var deaths: int = 0
 var isdead: bool = false
 var canDie: bool = true
-#
+
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 @onready var shootAudio = $fireAudio
@@ -28,7 +29,7 @@ func _ready():
 	leveltimer.start()
 
 func _physics_process(delta):
-	if life==0 && canDie: 
+	if deaths == lives && canDie: 
 		gameover()
 
 	if isdead == true: 
@@ -78,11 +79,11 @@ func _shoot():
 
 func die():
 	if(isdead == false):
-		life -= 1
+		deaths += 1
 		hp_changed.emit()
 	isdead = true
 	timer.start()
-	print("life : ", life)
+	print("life : ", lives - deaths)
 
 func diestate(delta):
 	#MeshColor.modulate(Color.RED)
@@ -93,24 +94,17 @@ func gameover():
 	GameSingletons.get_node("GameOverSound").play()
 	queue_free()
 	print("gameover")
-	pass
 
 func _on_timer_timeout() -> void:
 	isdead = false
 	MeshColor.rotation = 0
 	can_shoot = true
-	pass # Replace with function body.
-
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	die()
-	pass # Replace with function body.
-
 
 func _on_engine_audio_finished() -> void:
 	engineAudio.play()
 
-
 func end_of_level_timeout() -> void:
 	GameManager.swapScene(GameManager.current_index +1)
-	pass # Replace with function body.

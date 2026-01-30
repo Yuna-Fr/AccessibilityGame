@@ -42,7 +42,7 @@ func _ready():
 	# Buttons connection
 	easy.pressed.connect(difficulty_easy)
 	normal.pressed.connect(difficulty_normal)
-	easy.pressed.connect(difficulty_hard)
+	hard.pressed.connect(difficulty_hard)
 	
 	c_one_button.toggled.connect(c_toggle_one_button)
 	s_one_button.toggled.connect(s_toggle_one_button)
@@ -54,26 +54,39 @@ func _ready():
 	contrast_mode.toggled.connect(toggle_contrast_mode)
 
 func difficulty_easy(): 
-	CarController.life = 10
-	ShooterController.life = 10
-	PlatformerController.life = 10
+	CarController.lives = 10
+	ShooterController.lives = 10
+	PlatformerController.lives = 10
 	
 	Spawner.spawn_interval = 3.0
-
+	
+	
+	var node := get_tree().get_root().find_child("MajorTom", true, false)
+	if node is HUD:
+		node.on_hp_changed()
+	
 func difficulty_normal(): 
-	CarController.life = 3
-	ShooterController.life = 3
-	PlatformerController.life = 3
+	CarController.lives = 3
+	ShooterController.lives = 3
+	PlatformerController.lives = 3
 	#CarController.leveltime
 	
 	Spawner.spawn_interval = 2.0
+	
+	var node := get_tree().get_root().find_child("MajorTom", true, false)
+	if node is HUD:
+		node.on_hp_changed()
 
 func difficulty_hard(): 
-	CarController.life = 1
-	ShooterController.life = 1
-	PlatformerController.life = 1
+	CarController.lives = 1
+	ShooterController.lives = 1
+	PlatformerController.lives = 1
 	
 	Spawner.spawn_interval = 1.0
+	
+	var node := get_tree().get_root().find_child("MajorTom", true, false)
+	if node is HUD:
+		node.on_hp_changed()
 
 #region Shooter
 func c_toggle_one_button(toggled : bool): 

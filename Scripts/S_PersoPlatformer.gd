@@ -20,9 +20,10 @@ var coyoteOn: bool = false
 @export var respawnpoint : Node2D
 
 #Variables communes
-static var life: int = 3
 static var OneButton: bool = false
+static var lives: int = 3
 
+var deaths: int = 0
 var original_pos_x
 var new_pos_x
 var toggle_ground:bool # a toggle when ground is hit (to triggered once per collision)
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	#	cam.limit_left += new_pos_x - original_pos_x
 	#	original_pos_x = new_pos_x
 
-	if life==0 && canDie:
+	if deaths == lives && canDie:
 		gameover()
 
 	if not is_on_floor():
@@ -113,7 +114,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	position = respawnpoint.position
-	life -= 1
+	deaths += 1
 	hp_changed.emit()
 
 

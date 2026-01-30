@@ -1,7 +1,10 @@
 class_name CarController extends CharacterBody2D
 
 @export var speed: float = 500.0
-static var life: int = 3
+
+static var lives: int = 3
+
+var deaths: int = 0
 var isdead: bool = false
 var canDie: bool = true
 static var OneButton: bool = false
@@ -25,7 +28,7 @@ func _ready():
 func _physics_process(delta):
 	var direction := 0.0
 	
-	if life==0 && canDie:
+	if deaths >= lives && canDie:
 		gameover()
 	
 	if isdead == true:
@@ -55,11 +58,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func die():
 	if(isdead == false):
-		life -= 1
+		deaths += 1
 		hp_changed.emit()
 	isdead = true
 	timer.start()
-	print("life : ", life)
+	print("life : ", (lives - deaths))
 	
 
 func diestate(delta):
@@ -77,13 +80,10 @@ func gameover():
 func _on_timer_timeout() -> void:
 	isdead = false
 	MeshColor.rotation = 0
-	pass # Replace with function body.
 
 
 func _on_engine_audio_finished() -> void:
 	engineAudio.play()
 
-
 func end_of_level_timeout() -> void:
 	GameManager.swapScene(GameManager.current_index +1)
-	pass # Replace with function body.
