@@ -37,7 +37,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_tyrno")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocwxl"]
-size = Vector2(9079, 41)
+size = Vector2(9333, 41)
 
 [node name="LvlPlatformer" type="Node2D" unique_id=1444876429]
 
@@ -109,7 +109,7 @@ position = Vector2(686.04, 850)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=243601493]
-position = Vector2(3624.46, -10.5)
+position = Vector2(3751.46, 77.5)
 shape = SubResource("RectangleShape2D_ocwxl")
 
 [node name="MajorTom" parent="." unique_id=1170800278 node_paths=PackedStringArray("player") instance=ExtResource("12_eribn")]
