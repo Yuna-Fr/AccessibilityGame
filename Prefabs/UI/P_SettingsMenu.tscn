@@ -189,9 +189,10 @@ d_player = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 d_bullet = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5/ColorPickerButton4")
 d_enemy = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6/ColorPickerButton2")
 contrast_mode = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckBox5")
-co_forest = Color(0.01992562, 0.01992564, 0.019925622, 1)
-co_road = Color(0.01702068, 0.017020682, 0.01702067, 1)
-co_sea = Color(0.0010853444, 0.0010853447, 0.0010853439, 1)
+co_bg = Color(0.039399665, 0.22238266, 0.2666424, 1)
+co_forest = Color(0.1273287, 0.31768802, 0.26441357, 1)
+co_road = Color(0.46852952, 0.2729214, 0.23229161, 1)
+co_sea = Color(0.016253376, 0.15471548, 0.19552559, 1)
 co_platformer = Color(0, 0.81449157, 0.42685428, 1)
 metadata/_tab_index = 1
 
