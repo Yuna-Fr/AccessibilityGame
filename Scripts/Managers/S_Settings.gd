@@ -95,5 +95,5 @@ func reset_colors_to_default():
 
 
 func set_global_font_size(size: int) -> void:
-	var theme := ThemeDB.get_default_theme()
-	theme.set_default_font_size(size)
+	var g_theme := ThemeDB.get_default_theme()
+	g_theme.set_default_font_size(size)
