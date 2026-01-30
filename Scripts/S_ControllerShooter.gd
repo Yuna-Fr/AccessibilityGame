@@ -9,7 +9,7 @@ signal hp_changed()
 #Variables communes
 static var life: int = 3
 static var OneButton: bool = false
-static var LevelTime: float = 5
+static var LevelTime: float = 40
 var isdead: bool = false
 var canDie: bool = true
 #
