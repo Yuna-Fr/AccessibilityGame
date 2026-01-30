@@ -1,7 +1,7 @@
 extends MarginContainer
 
 const CONFIG_PATH := "user://keybindings.cfg"
-const AXIS_DEADZONE := 0.5
+const AXIS_DEADZONE := 0.7
 const REBINDABLE_ACTIONS := [
 	"Move_Up",
 	"Move_Down",
@@ -56,17 +56,17 @@ func _ready():
 	load_bindings()
 	update_button_labels()
 	
-	move_up_btn.pressed.connect(func(): start_rebind("Move_Up", BindType.KEYBOARD))
-	move_down_btn.pressed.connect(func(): start_rebind("Move_Down", BindType.KEYBOARD))
-	move_left_btn.pressed.connect(func(): start_rebind("Move_Left", BindType.KEYBOARD))
-	move_right_btn.pressed.connect(func(): start_rebind("Move_Right", BindType.KEYBOARD))
-	action_btn.pressed.connect(func(): start_rebind("Action", BindType.KEYBOARD))
+	move_up_btn.pressed.connect(func(): start_rebind("Move_Up", BindType.KEYBOARD, move_up_btn))
+	move_down_btn.pressed.connect(func(): start_rebind("Move_Down", BindType.KEYBOARD, move_down_btn))
+	move_left_btn.pressed.connect(func(): start_rebind("Move_Left", BindType.KEYBOARD, move_left_btn))
+	move_right_btn.pressed.connect(func(): start_rebind("Move_Right", BindType.KEYBOARD, move_right_btn))
+	action_btn.pressed.connect(func(): start_rebind("Action", BindType.KEYBOARD, action_btn))
 	
-	move_up_gamepad.pressed.connect(func(): start_rebind("Move_Up", BindType.GAMEPAD))
-	move_down_gamepad.pressed.connect(func(): start_rebind("Move_Down", BindType.GAMEPAD))
-	move_left_gamepad.pressed.connect(func(): start_rebind("Move_Left", BindType.GAMEPAD))
-	move_right_gamepad.pressed.connect(func(): start_rebind("Move_Right", BindType.GAMEPAD))
-	action_gamepad.pressed.connect(func(): start_rebind("Action", BindType.GAMEPAD))
+	move_up_gamepad.pressed.connect(func(): start_rebind("Move_Up", BindType.GAMEPAD, move_up_gamepad))
+	move_down_gamepad.pressed.connect(func(): start_rebind("Move_Down", BindType.GAMEPAD, move_down_gamepad))
+	move_left_gamepad.pressed.connect(func(): start_rebind("Move_Left", BindType.GAMEPAD, move_left_gamepad))
+	move_right_gamepad.pressed.connect(func(): start_rebind("Move_Right", BindType.GAMEPAD, move_right_gamepad))
+	action_gamepad.pressed.connect(func(): start_rebind("Action", BindType.GAMEPAD, action_gamepad))
 
 	reset_btn.pressed.connect(func(): reset_bindings())
 
@@ -83,10 +83,11 @@ func reset_bindings():
 
 	update_button_labels()
 
-func start_rebind(action: String, type :BindType):
+func start_rebind(action: String, type :BindType, button :  Button):
 	waiting_for_input = true
 	action_to_rebind = action
 	bind_type = type
+	button.text = "   "
 
 func _input(event):
 	if not waiting_for_input: return
@@ -100,8 +101,8 @@ func _input(event):
 			rebind_gamepad(action_to_rebind, event)
 			_finish_rebind()
 		elif event is InputEventJoypadMotion and abs(event.axis_value) > AXIS_DEADZONE:
-				rebind_axis(action_to_rebind, event)
-				_finish_rebind()
+			rebind_axis(action_to_rebind, event)
+			_finish_rebind()
 
 func _finish_rebind():
 	waiting_for_input = false
@@ -126,16 +127,15 @@ func rebind_key(action: String, event: InputEventKey):
 	InputMap.action_add_event(action, new_event)
 
 func rebind_gamepad(action: String, event: InputEventJoypadButton):
-	# Remove duplicate gamepad
+	# Remove duplicate gamepad bindings
 	for act in REBINDABLE_ACTIONS:
-		if act == action:
-			continue
+		if act == action: continue
 		for ev in InputMap.action_get_events(act):
 			if ev is InputEventJoypadButton and ev.button_index == event.button_index:
 				InputMap.action_erase_event(act, ev)
 
 	for ev in InputMap.action_get_events(action):
-		if ev is InputEventJoypadButton:
+		if ev is InputEventJoypadButton or ev is InputEventJoypadMotion:
 			InputMap.action_erase_event(action, ev)
 
 	var new_event := InputEventJoypadButton.new()
@@ -144,9 +144,15 @@ func rebind_gamepad(action: String, event: InputEventJoypadButton):
 	InputMap.action_add_event(action, new_event)
 
 func rebind_axis(action: String, event: InputEventJoypadMotion):
-	# Remove duplicate axis bindings
+	# Remove duplicate gamepad bindings
+	for act in REBINDABLE_ACTIONS:
+		if act == action: continue
+		for ev in InputMap.action_get_events(act):
+			if ev is InputEventJoypadMotion and ev.axis == event.axis and sign(ev.axis_value) == sign(event.axis_value):
+				InputMap.action_erase_event(act, ev)
+	
 	for ev in InputMap.action_get_events(action):
-		if ev is InputEventJoypadMotion:
+		if ev is InputEventJoypadButton or ev is InputEventJoypadMotion:
 			InputMap.action_erase_event(action, ev)
 
 	var new_event := InputEventJoypadMotion.new()
@@ -178,17 +184,16 @@ func get_action_label(action: String, type: BindType) -> String:
 			return ev.as_text()
 
 		if type == BindType.GAMEPAD:
-			if ev is InputEventJoypadMotion:
-				axis_event = ev
-			elif ev is InputEventJoypadButton:
+			if ev is InputEventJoypadButton:
 				button_event = ev
+			elif ev is InputEventJoypadMotion:
+				axis_event = ev
 
 	if axis_event:
 		var axis_name: String = CONTROLLER_AXIS_LABEL.get(
 			axis_event.axis, "Axis " + str(axis_event.axis))
 		var dir := "+" if axis_event.axis_value > 0.0 else "-"
 		return axis_name + dir
-		
 
 	if button_event:
 		return CONTROLLER_BUTTON_LABELS.get(

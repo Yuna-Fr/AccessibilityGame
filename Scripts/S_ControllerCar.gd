@@ -1,10 +1,11 @@
-class_name ControllerCar extends CharacterBody2D
+class_name CarController extends CharacterBody2D
 
 @export var speed: float = 500.0
 @export var life: int = 3
 var isdead: bool = false
 var canDie: bool = true
-var OneButton: bool = false
+static var OneButton: bool = false
+
 @onready var timer = $Timer
 @onready var MeshColor = $MeshInstance2D
 @onready var engineAudio = $engineAudio

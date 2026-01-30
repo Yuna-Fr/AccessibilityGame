@@ -169,7 +169,7 @@ alignment = 1
 layout_mode = 2
 text = "   Reset   "
 
-[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("c_one_button", "s_one_button", "p_one_button", "daltonism_mode", "contrast_mode")]
+[node name="ACCESSIBILITY" type="MarginContainer" parent="CenterContainer/TabContainer" unique_id=2136410764 node_paths=PackedStringArray("c_one_button", "s_one_button", "p_one_button", "daltonism_mode")]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -180,16 +180,7 @@ script = ExtResource("4_166xi")
 c_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/RacingFoldableContainer/MarginContainer/VBoxContainer/CheckBox")
 s_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShootFoldableContainer2/MarginContainer/VBoxContainer/CheckBox")
 p_one_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PlatformFoldableContainer3/MarginContainer/VBoxContainer/CheckBox")
-default_bg = Color(0.17254902, 0.9137255, 1, 1)
-default_forest = Color(0, 0.972549, 0.78431374, 1)
-default_road = Color(1, 0.5921569, 0.3647059, 1)
-default_sea = Color(0.17254902, 0.9137255, 1, 1)
-default_bullet = Color(1, 1, 1, 1)
-default_enemy = Color(1, 0.8, 0.4627451, 1)
-default_platformer = Color(0.9882353, 0.9372549, 0.72156864, 1)
-default_player = Color(1, 1, 1, 1)
 daltonism_mode = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckBox4")
-contrast_mode = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckBox5")
 metadata/_tab_index = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY" unique_id=922855357]
@@ -539,6 +530,7 @@ theme_override_constants/h_separation = 15
 text = "DALTONISM_COLORS"
 
 [node name="CheckBox5" type="CheckBox" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=75751518]
+visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 15
 text = "HIGH_CONTRAST_COLORS"
@@ -585,7 +577,6 @@ theme_override_constants/h_separation = 15
 text = "OBSTACLES_SOUNDS_WARNINGS"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer" unique_id=753558054]
-visible = false
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="CenterContainer/TabContainer/ACCESSIBILITY/VBoxContainer/HBoxContainer" unique_id=1730822678]
