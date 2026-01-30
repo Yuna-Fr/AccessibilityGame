@@ -13,7 +13,7 @@
 [ext_resource type="Shader" uid="uid://cp2gtvfuokhro" path="res://Shader/ColorShader/TileShader.tres" id="10_kpbdu"]
 [ext_resource type="PackedScene" uid="uid://ciyofkvy5ljlf" path="res://Prefabs/UI/P_hud.tscn" id="12_eribn"]
 [ext_resource type="PackedScene" uid="uid://byiohioj82k7v" path="res://Prefabs/P_access_tile_map.tscn" id="12_y31hh"]
-[ext_resource type="PackedScene" uid="uid://6ac0en1f0gtf" path="res://Prefabs/P_Flag.tscn" id="13_hvx77"]
+[ext_resource type="PackedScene" path="res://Prefabs/P_Flag.tscn" id="13_hvx77"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eribn"]
 shader = ExtResource("1_q70wk")
