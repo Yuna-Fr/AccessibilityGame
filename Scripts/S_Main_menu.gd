@@ -1,11 +1,12 @@
 extends Control
 
 @export var first_level : PackedScene
+@export var startButton : Button
 
 var optionUI
 
 func _ready() -> void:
-	
+	startButton.grab_focus
 	optionUI = GameSingletons.get_node("MenuLayer")
 
 func _on_start_pressed() -> void:

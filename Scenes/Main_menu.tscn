@@ -24,7 +24,7 @@ scale_max = 2.0
 turbulence_noise_strength = 0.1
 turbulence_noise_scale = 1.0
 
-[node name="MainMenu" type="Control" unique_id=2044436619]
+[node name="MainMenu" type="Control" unique_id=2044436619 node_paths=PackedStringArray("startButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f7j37")
 first_level = ExtResource("2_787fc")
+startButton = NodePath("VBoxContainer/Start")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1580893187]
 layout_mode = 1
@@ -41,6 +42,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
 texture = ExtResource("1_7sp8y")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=928622252]
