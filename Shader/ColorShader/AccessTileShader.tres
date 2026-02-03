@@ -16,6 +16,7 @@ qualifier = 1
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_gep7u"]
+constant = Color(1, 0.6313726, 1, 1)
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_64vn8"]
 output_port_for_preview = 0
